@@ -51,10 +51,11 @@ const Wrapper = styled.div`
   column-gap: 24px;
   align-items: center;
   height: 100px;
+  /* background-color: black; */
 `;
 
 const LogoWrapper = styled.div`
-  grid-column: span 3;
+  grid-column: span 4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +68,7 @@ const Logo = styled.img`
 `;
 
 const GnbContainer = styled.div`
-  grid-column: span 6;
+  grid-column: span 5;
   display: flex;
   justify-content: space-around;
   align-items: center;

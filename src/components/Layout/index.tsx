@@ -9,15 +9,13 @@ interface IProps {
 
 export const Layout = ({ children }: IProps) => {
   return (
-    <>
-      <Root>
-        <Container>
-          <Header />
-          <Content>{children}</Content>
-          <Footer />
-        </Container>
-      </Root>
-    </>
+    <Root>
+      <Container>
+        <Header />
+        <Content>{children}</Content>
+        <Footer />
+      </Container>
+    </Root>
   );
 };
 
@@ -29,8 +27,10 @@ const Root = styled.div`
 
 const Container = styled.div`
   width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   margin-top: 100px;
-  padding: 0px 30px;
   overflow-x: auto;
   overflow-y: auto;
 `;

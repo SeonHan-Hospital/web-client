@@ -36,6 +36,10 @@ const palette = {
 };
 
 const typography = {
+  title1: {
+    fontWeight: 700,
+    fontSize: 50,
+  },
   title2: {
     fontWeight: 500,
     fontSize: 36,

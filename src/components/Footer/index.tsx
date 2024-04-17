@@ -29,8 +29,8 @@ export const Footer = () => {
 
 const FooterContainer = styled.div`
   width: 100vw;
-  position: absolute;
-  left: 0;
+  /* position: absolute;
+  left: 0; */
   height: 350px;
   display: flex;
   justify-content: center;
