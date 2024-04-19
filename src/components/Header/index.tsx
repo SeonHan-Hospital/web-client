@@ -70,11 +70,46 @@ export const Header = () => {
           </CallWrapper>
         </Wrapper>
       </HeaderContainer>
-      {isMenus[0] && <HeaderModal left={menuLefts[0] || 0} menus={[]} />}
-      {isMenus[1] && <HeaderModal left={menuLefts[1] || 0} menus={[]} />}
-      {isMenus[2] && <HeaderModal left={menuLefts[2] || 0} menus={[]} />}
-      {isMenus[3] && <HeaderModal left={menuLefts[3] || 0} menus={[]} />}
-      {isMenus[4] && <HeaderModal left={menuLefts[4] || 0} menus={[]} />}
+      {isMenus[0] && (
+        <HeaderModal
+          handleMouseOver={() => handleHoverMenus(0)}
+          handleMouseOut={handleMouseOut}
+          left={menuLefts[0] || 0}
+          menus={[]}
+        />
+      )}
+      {isMenus[1] && (
+        <HeaderModal
+          handleMouseOver={() => handleHoverMenus(1)}
+          handleMouseOut={handleMouseOut}
+          left={menuLefts[1] || 0}
+          menus={[]}
+        />
+      )}
+      {isMenus[2] && (
+        <HeaderModal
+          handleMouseOver={() => handleHoverMenus(2)}
+          handleMouseOut={handleMouseOut}
+          left={menuLefts[2] || 0}
+          menus={[]}
+        />
+      )}
+      {isMenus[3] && (
+        <HeaderModal
+          handleMouseOver={() => handleHoverMenus(3)}
+          handleMouseOut={handleMouseOut}
+          left={menuLefts[3] || 0}
+          menus={[]}
+        />
+      )}
+      {isMenus[4] && (
+        <HeaderModal
+          handleMouseOver={() => handleHoverMenus(4)}
+          handleMouseOut={handleMouseOut}
+          left={menuLefts[4] || 0}
+          menus={[]}
+        />
+      )}
     </>
   );
 };
@@ -149,6 +184,7 @@ const Call = styled.div`
   width: 198px;
   height: 48px;
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   background-color: ${theme.palette.primaryLight};
