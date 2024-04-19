@@ -5,7 +5,7 @@ export interface IGridBoxProps {
   start?: number;
   size?: number;
   row?: number;
-  rowSize?: number;
+  rowsize?: number;
   color?: string;
   fontSize?: number;
   fontWeight?: number;
@@ -14,7 +14,7 @@ export interface IGridBoxProps {
 export const TextBox = styled.div<IGridBoxProps>`
   ${(props) => `
     grid-column: ${props.start} / span ${props.size};
-    grid-row: ${props.row} / span ${props.rowSize};
+    grid-row: ${props.row} / span ${props.rowsize};
     font-weight: ${props.fontWeight && props.fontWeight};
     font-size: ${props.fontSize && props.fontSize}px;
     color: ${props.color && props.color};

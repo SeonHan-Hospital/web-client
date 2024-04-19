@@ -17,7 +17,7 @@ export const Footer = () => {
             color={el.color}
             fontWeight={el.fontWeight}
             row={el.row}
-            rowSize={el.rowSize}
+            rowsize={el.rowsize}
           >
             {el.label}
           </TextBox>
