@@ -9,8 +9,8 @@ import Map from "./Map.svg";
 export const Home = () => {
   return (
     <Layout>
+      <MainImgWrapper style={{ backgroundImage: `url(${MainIMG})` }} />
       <Container>
-        <MainImgWrapper style={{ backgroundImage: `url(${MainIMG})` }} />
         <MainContainer style={{ backgroundImage: `url(${MainBackground})` }}>
           <MainTitleWrapper>주요 진료</MainTitleWrapper>
           <DetailContentsBox />
@@ -34,11 +34,14 @@ export const Home = () => {
 
 const Container = styled.div`
   width: 1260px;
+  margin: auto;
 `;
 
 const MainImgWrapper = styled.div`
-  width: 1260px;
+  width: 100vw;
+  min-width: 1260px;
   height: 600px;
+  background: center / cover no-repeat;
 `;
 
 const MainContainer = styled.div`
