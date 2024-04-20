@@ -5,7 +5,6 @@ import MainBackground from "./MainBackground.svg";
 import Banner from "./Banner.svg";
 import theme, { response } from "../../styles/theme";
 import Map from "./Map.svg";
-import { useEffect, useState } from "react";
 import MobileMain from "./MobileMain.svg";
 import MobileMap from "./MobileMap.svg";
 import MobileBanner from "./MobileBanner.svg";

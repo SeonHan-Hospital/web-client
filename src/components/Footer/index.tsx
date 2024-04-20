@@ -1,13 +1,27 @@
 import styled from "styled-components";
-import theme from "../../styles/theme";
-import { FooterTexts } from "./data";
+import theme, { response } from "../../styles/theme";
+import { FooterTexts, MobileFooterTexts } from "./data";
 import { TextBox } from "../../styles/common";
+import { useEffect, useState } from "react";
 
 export const Footer = () => {
+  const [footers, setFooters] = useState(
+    window.innerWidth > 1261 ? FooterTexts : MobileFooterTexts
+  );
+
+  useEffect(() => {
+    if (window.innerWidth > 1261) {
+      setFooters(FooterTexts);
+    } else {
+      setFooters(MobileFooterTexts);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [window.innerWidth]);
+
   return (
     <FooterContainer>
       <Wrapper>
-        {FooterTexts.map((el, idx) => (
+        {footers.map((el, idx) => (
           <TextBox
             key={idx}
             start={el.start}
@@ -37,6 +51,11 @@ const FooterContainer = styled.div`
   align-items: center;
   color: white;
   background-color: ${theme.palette.primary};
+
+  @media only screen and (max-width: ${response.desktop}px) {
+    width: 280px;
+    height: 512px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -46,4 +65,12 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(7, 1fr);
   column-gap: 24px;
+
+  @media only screen and (max-width: ${response.desktop}px) {
+    padding: 0 15px;
+    height: 472px;
+    width: 250px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+  }
 `;

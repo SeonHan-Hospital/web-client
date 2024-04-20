@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { response } from "./theme";
 
 export interface IGridBoxProps {
   label?: string;
@@ -20,4 +21,13 @@ export const TextBox = styled.div<IGridBoxProps>`
     color: ${props.color && props.color};
   `}
   white-space: pre;
+
+  @media only screen and (max-width: ${response.desktop}px) {
+    grid-column: span 6;
+    grid-row: ${(props) => `${props.row} / span ${props.rowsize}`};
+    width: 240px;
+    display: flex;
+    align-items: end;
+    padding: 10px 0;
+  }
 `;
