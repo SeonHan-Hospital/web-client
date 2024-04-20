@@ -2,7 +2,7 @@
 import { createGlobalStyle, css } from "styled-components";
 
 export const response = {
-  desktop: 1200,
+  desktop: 1260,
   pad: 768,
   mobile: 360,
 };

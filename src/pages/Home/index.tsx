@@ -3,15 +3,51 @@ import { Layout } from "../../components/Layout";
 import MainIMG from "./MainIMG.svg";
 import MainBackground from "./MainBackground.svg";
 import Banner from "./Banner.svg";
-import theme from "../../styles/theme";
+import theme, { response } from "../../styles/theme";
 import Map from "./Map.svg";
+import { useEffect, useState } from "react";
+import MobileMain from "./MobileMain.svg";
+import MobileMap from "./MobileMap.svg";
+import MobileBanner from "./MobileBanner.svg";
+import MobileBackground from "./MobileBackground.svg";
 
 export const Home = () => {
+  const style1 = `
+    @media only screen and (min-width: 1261px) {
+      .mainimg {
+        background-image: url(${MainIMG});
+      }
+      .mainback {
+        background-image: url(${MainBackground});
+      }
+      .banner {
+        content: url(${Banner});
+      }
+      .map {
+        content: url(${Map});
+      }
+    }
+    @media only screen and (max-width: 1261px) {
+      .mainimg {
+        background-image: url(${MobileMain});
+      }
+      .mainback {
+        background-image: url(${MobileBackground});
+      }
+      .banner {
+        content: url(${MobileBanner});
+      }
+      .map {
+        content: url(${MobileMap});
+      }
+    }`;
+
   return (
     <Layout>
-      <MainImgWrapper style={{ backgroundImage: `url(${MainIMG})` }} />
+      <style>{style1}</style>
+      <MainImgWrapper className="mainimg" />
       <Container>
-        <MainContainer style={{ backgroundImage: `url(${MainBackground})` }}>
+        <MainContainer className="mainback">
           <MainTitleWrapper>주요 진료</MainTitleWrapper>
           <DetailContentsBox />
           <DetailContentsBox />
@@ -20,9 +56,9 @@ export const Home = () => {
           <DetailContentsBox />
           <DetailContentsBox />
         </MainContainer>
-        <img src={Banner} alt="banner" />
+        <img className="banner" alt="banner" />
         <InfoContainer>
-          <MapWrapper src={Map} />
+          <MapWrapper className="map" alt="map" />
           <InfoWrapper />
           <InfoWrapper />
           <InfoWrapper />
@@ -35,6 +71,11 @@ export const Home = () => {
 const Container = styled.div`
   width: 1260px;
   margin: auto;
+
+  @media only screen and (max-width: ${response.desktop}px) {
+    width: 280px;
+    margin: auto;
+  }
 `;
 
 const MainImgWrapper = styled.div`
@@ -42,6 +83,12 @@ const MainImgWrapper = styled.div`
   min-width: 1260px;
   height: 600px;
   background: center / cover no-repeat;
+  @media only screen and (max-width: ${response.desktop}px) {
+    width: 280px;
+    height: 233px;
+    background: center / contain no-repeat;
+    min-width: auto;
+  }
 `;
 
 const MainContainer = styled.div`
@@ -50,6 +97,10 @@ const MainContainer = styled.div`
   column-gap: 24px;
   background: center / cover no-repeat;
   padding: 20px 30px;
+  @media only screen and (max-width: ${response.desktop}px) {
+    grid-template-columns: repeat(6, 1fr);
+    padding: 20px;
+  }
 `;
 
 const MainTitleWrapper = styled.div`
@@ -59,6 +110,11 @@ const MainTitleWrapper = styled.div`
   align-items: center;
   ${theme.typography.title1};
   padding: 20px 0;
+  @media only screen and (max-width: ${response.desktop}px) {
+    grid-column: span 6;
+    font-size: 20px;
+    padding: 0 0 20px 0;
+  }
 `;
 
 const DetailContentsBox = styled.div`
@@ -68,6 +124,10 @@ const DetailContentsBox = styled.div`
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
   background-color: white;
   margin-bottom: 20px;
+  @media only screen and (max-width: ${response.desktop}px) {
+    grid-column: span 6;
+    height: 225px;
+  }
 `;
 
 const InfoContainer = styled.div`
@@ -77,12 +137,20 @@ const InfoContainer = styled.div`
   column-gap: 24px;
   row-gap: 12px;
   padding: 50px 30px;
+  @media only screen and (max-width: ${response.desktop}px) {
+    grid-template-columns: repeat(6, 1fr);
+    padding: 15px;
+    grid-template-rows: none;
+  }
 `;
 
 const MapWrapper = styled.img`
   width: auto;
   grid-column: span 8;
   grid-row: span 7;
+  @media only screen and (max-width: ${response.desktop}px) {
+    grid-column: span 6;
+  }
 `;
 
 const InfoWrapper = styled.div`
@@ -90,4 +158,7 @@ const InfoWrapper = styled.div`
   grid-row: span 2;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
+  @media only screen and (max-width: ${response.desktop}px) {
+    grid-column: span 6;
+  }
 `;
