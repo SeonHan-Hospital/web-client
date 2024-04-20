@@ -5,6 +5,8 @@ import theme from "../../styles/theme";
 import callIcon from "./call_icon.svg";
 import { useCallback, useEffect, useState } from "react";
 import { HeaderModal } from "./HeaderModal";
+import MobileLogo from "./MobileLogo.svg";
+import MobileIcon from "./MobileIcon.svg";
 
 export const Header = () => {
   const [menuLefts, setMenuLefts] = useState<(number | undefined)[]>([]);
@@ -15,17 +17,37 @@ export const Header = () => {
     false,
     false,
   ]);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setMenuLefts([
-      document.getElementById("menu0")?.getBoundingClientRect().left,
-      document.getElementById("menu1")?.getBoundingClientRect().left,
-      document.getElementById("menu2")?.getBoundingClientRect().left,
-      document.getElementById("menu3")?.getBoundingClientRect().left,
-      document.getElementById("menu4")?.getBoundingClientRect().left,
-    ]);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [window.innerWidth]);
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setMenuLefts([
+          document.getElementById("menu0")?.getBoundingClientRect().left,
+          document.getElementById("menu1")?.getBoundingClientRect().left,
+          document.getElementById("menu2")?.getBoundingClientRect().left,
+          document.getElementById("menu3")?.getBoundingClientRect().left,
+          document.getElementById("menu4")?.getBoundingClientRect().left,
+        ]);
+        if (window.innerWidth > 1261) {
+          setIsMobile(false);
+        } else {
+          setIsMobile(true);
+        }
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      handleResize();
+
+      return () => window.removeEventListener("resize", handleResize);
+    } else {
+      return () =>
+        window.removeEventListener("resize", () => {
+          return null;
+        });
+    }
+  }, []);
 
   const handleHoverMenus = useCallback((idx: number) => {
     const arr = new Array(5).fill(false);
@@ -40,75 +62,91 @@ export const Header = () => {
 
   return (
     <>
-      <HeaderContainer fixed={true}>
-        <Wrapper>
-          <LogoWrapper>
-            <Logo src={logo} alt="logo" />
-          </LogoWrapper>
-          <GnbContainer>
-            {menus.map((el, idx) => (
-              <Menu
-                key={idx}
-                id={`menu${idx}`}
-                onMouseOver={() => handleHoverMenus(idx)}
-                onMouseOut={handleMouseOut}
-              >
-                {el.label}
-              </Menu>
-            ))}
-          </GnbContainer>
-          <CallWrapper>
-            <Call>
-              <img
-                src={callIcon}
-                alt="icon"
-                width={28}
-                style={{ marginRight: "10px" }}
-              />
-              010-4654-9708
-            </Call>
-          </CallWrapper>
-        </Wrapper>
-      </HeaderContainer>
-      {isMenus[0] && (
-        <HeaderModal
-          handleMouseOver={() => handleHoverMenus(0)}
-          handleMouseOut={handleMouseOut}
-          left={menuLefts[0] || 0}
-          menus={[]}
-        />
-      )}
-      {isMenus[1] && (
-        <HeaderModal
-          handleMouseOver={() => handleHoverMenus(1)}
-          handleMouseOut={handleMouseOut}
-          left={menuLefts[1] || 0}
-          menus={[]}
-        />
-      )}
-      {isMenus[2] && (
-        <HeaderModal
-          handleMouseOver={() => handleHoverMenus(2)}
-          handleMouseOut={handleMouseOut}
-          left={menuLefts[2] || 0}
-          menus={[]}
-        />
-      )}
-      {isMenus[3] && (
-        <HeaderModal
-          handleMouseOver={() => handleHoverMenus(3)}
-          handleMouseOut={handleMouseOut}
-          left={menuLefts[3] || 0}
-          menus={[]}
-        />
-      )}
-      {isMenus[4] && (
-        <HeaderModal
-          handleMouseOver={() => handleHoverMenus(4)}
-          handleMouseOut={handleMouseOut}
-          left={menuLefts[4] || 0}
-          menus={[]}
-        />
+      {isMobile ? (
+        <MobileHeaderContainer>
+          <MobileLogoWrapper>
+            <MobileLogoImg
+              src={MobileLogo}
+              style={{ marginLeft: 10 }}
+              alt="logo"
+              width={151.37}
+            />
+          </MobileLogoWrapper>
+          <MobileLogoImg src={MobileIcon} alt="icon" />
+        </MobileHeaderContainer>
+      ) : (
+        <>
+          <HeaderContainer fixed={true}>
+            <Wrapper>
+              <LogoWrapper>
+                <Logo src={logo} alt="logo" />
+              </LogoWrapper>
+              <GnbContainer>
+                {menus.map((el, idx) => (
+                  <Menu
+                    key={idx}
+                    id={`menu${idx}`}
+                    onMouseOver={() => handleHoverMenus(idx)}
+                    onMouseOut={handleMouseOut}
+                  >
+                    {el.label}
+                  </Menu>
+                ))}
+              </GnbContainer>
+              <CallWrapper>
+                <Call>
+                  <img
+                    src={callIcon}
+                    alt="icon"
+                    width={28}
+                    style={{ marginRight: "10px" }}
+                  />
+                  010-4654-9708
+                </Call>
+              </CallWrapper>
+            </Wrapper>
+          </HeaderContainer>
+          {isMenus[0] && (
+            <HeaderModal
+              handleMouseOver={() => handleHoverMenus(0)}
+              handleMouseOut={handleMouseOut}
+              left={menuLefts[0] || 0}
+              menus={[]}
+            />
+          )}
+          {isMenus[1] && (
+            <HeaderModal
+              handleMouseOver={() => handleHoverMenus(1)}
+              handleMouseOut={handleMouseOut}
+              left={menuLefts[1] || 0}
+              menus={[]}
+            />
+          )}
+          {isMenus[2] && (
+            <HeaderModal
+              handleMouseOver={() => handleHoverMenus(2)}
+              handleMouseOut={handleMouseOut}
+              left={menuLefts[2] || 0}
+              menus={[]}
+            />
+          )}
+          {isMenus[3] && (
+            <HeaderModal
+              handleMouseOver={() => handleHoverMenus(3)}
+              handleMouseOut={handleMouseOut}
+              left={menuLefts[3] || 0}
+              menus={[]}
+            />
+          )}
+          {isMenus[4] && (
+            <HeaderModal
+              handleMouseOver={() => handleHoverMenus(4)}
+              handleMouseOut={handleMouseOut}
+              left={menuLefts[4] || 0}
+              menus={[]}
+            />
+          )}
+        </>
       )}
     </>
   );
@@ -190,4 +228,22 @@ const Call = styled.div`
   background-color: ${theme.palette.primaryLight};
   color: white;
   border-radius: 4px;
+`;
+
+const MobileHeaderContainer = styled.div`
+  width: 280px;
+  height: 60px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+`;
+
+const MobileLogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const MobileLogoImg = styled.img`
+  cursor: pointer;
 `;

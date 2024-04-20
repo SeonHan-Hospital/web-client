@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Header } from "../Header";
 import { Footer } from "../Footer";
+import { response } from "../../styles/theme";
 
 interface IProps {
   children: React.ReactNode;
@@ -33,6 +34,10 @@ const Container = styled.div`
   margin-top: 100px;
   overflow-x: auto;
   overflow-y: auto;
+
+  @media only screen and (max-width: ${response.desktop}px) {
+    margin-top: 60px;
+  }
 `;
 
 const Content = styled.div<{ hideSideMenu?: boolean }>`
