@@ -176,7 +176,7 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(12, 1fr);
   column-gap: 24px;
   align-items: center;
-  max-height: 100px;
+  height: 100px;
   /* background-color: black; */
 `;
 

@@ -10,7 +10,7 @@ export const Footer = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const handleFooterData = () => {
-        if (window.innerWidth > 1261) {
+        if (window.innerWidth >= 500) {
           setFooters(FooterTexts);
         } else {
           setFooters(MobileFooterTexts);
@@ -62,8 +62,7 @@ const FooterContainer = styled.div`
   color: white;
   background-color: ${theme.palette.primary};
 
-  @media only screen and (max-width: ${response.desktop}px) {
-    width: 280px;
+  @media only screen and (max-width: ${response.mobile}px) {
     height: 512px;
   }
 `;
@@ -76,10 +75,8 @@ const Wrapper = styled.div`
   grid-template-rows: repeat(7, 1fr);
   column-gap: 24px;
 
-  @media only screen and (max-width: ${response.desktop}px) {
-    padding: 0 15px;
+  @media only screen and (max-width: ${response.mobile}px) {
     height: 472px;
-    width: 250px;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(12, 1fr);
   }

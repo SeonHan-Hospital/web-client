@@ -20,7 +20,7 @@ export const FooterTexts: IGridBoxProps[] = [
     fontWeight: 500,
   },
   {
-    label: "제주선한병원 제주특별자치도 제주시 중앙로 616",
+    label: "제주선한병원 제주특별자치도 제주시\n중앙로 616",
     start: 2,
     size: 5,
     row: 3,
