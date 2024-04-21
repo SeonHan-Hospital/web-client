@@ -14,7 +14,7 @@ export const Layout = ({ children }: IProps) => {
       <Container>
         <Header />
         <Content>{children}</Content>
-        <Footer />
+        {/* <Footer /> */}
       </Container>
     </Root>
   );

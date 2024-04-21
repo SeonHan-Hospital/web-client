@@ -18,6 +18,7 @@ export const Header = () => {
     false,
   ]);
   const [isMobile, setIsMobile] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -29,10 +30,15 @@ export const Header = () => {
           document.getElementById("menu3")?.getBoundingClientRect().left,
           document.getElementById("menu4")?.getBoundingClientRect().left,
         ]);
-        if (window.innerWidth > 1261) {
+        if (window.innerWidth > 768) {
           setIsMobile(false);
         } else {
           setIsMobile(true);
+        }
+        if (window.innerWidth > 1100) {
+          setIsDesktop(true);
+        } else {
+          setIsDesktop(false);
         }
       };
 
@@ -101,7 +107,7 @@ export const Header = () => {
                     width={28}
                     style={{ marginRight: "10px" }}
                   />
-                  010-4654-9708
+                  {isDesktop && "010-4654-9708"}
                 </Call>
               </CallWrapper>
             </Wrapper>
@@ -165,34 +171,33 @@ const HeaderContainer = styled.div<{ fixed: boolean }>`
 `;
 
 const Wrapper = styled.div`
-  width: 1260px;
+  max-width: 1260px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 24px;
   align-items: center;
-  height: 100px;
+  max-height: 100px;
   /* background-color: black; */
 `;
 
 const LogoWrapper = styled.div`
-  grid-column: span 4;
+  grid-column: span 2;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const Logo = styled.img`
-  width: 252.29px;
+  width: 100%;
   cursor: pointer;
   height: 60px;
 `;
 
 const GnbContainer = styled.div`
-  grid-column: span 5;
+  grid-column: span 8;
   display: flex;
   /* justify-content: space-around; */
   align-items: center;
-  width: 738px;
   margin: 0 20px;
   height: 100px;
 `;
@@ -212,7 +217,7 @@ const Menu = styled.div`
 `;
 
 const CallWrapper = styled.div`
-  grid-column: span 3;
+  grid-column: span 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -231,7 +236,7 @@ const Call = styled.div`
 `;
 
 const MobileHeaderContainer = styled.div`
-  width: 280px;
+  width: 100%;
   height: 60px;
   position: fixed;
   display: flex;

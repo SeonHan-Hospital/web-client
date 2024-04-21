@@ -12,7 +12,7 @@ import MobileBackground from "./MobileBackground.svg";
 
 export const Home = () => {
   const style1 = `
-    @media only screen and (min-width: 1261px) {
+    @media only screen and (min-width: 500px) {
       .mainimg {
         background-image: url(${MainIMG});
       }
@@ -20,13 +20,21 @@ export const Home = () => {
         background-image: url(${MainBackground});
       }
       .banner {
-        content: url(${Banner});
+        background-image: url(${Banner});
       }
       .map {
-        content: url(${Map});
+        background-image: url(${Map});
       }
     }
-    @media only screen and (max-width: 1261px) {
+    @media only screen and (max-width: 768px) {
+      .banner {
+        background-image: url(${MobileBanner});
+      }
+      .bannerText {
+        display: none;
+      }
+    }
+    @media only screen and (max-width: 500px) {
       .mainimg {
         background-image: url(${MobileMain});
       }
@@ -34,17 +42,27 @@ export const Home = () => {
         background-image: url(${MobileBackground});
       }
       .banner {
-        content: url(${MobileBanner});
+        background-image: url(${MobileBanner});
       }
       .map {
-        content: url(${MobileMap});
+        background-image: url(${MobileMap});
+      }
+      .bannerText {
+        display: none;
+      }
+      .mainText {
+        display: none;
       }
     }`;
 
   return (
     <Layout>
       <style>{style1}</style>
-      <MainImgWrapper className="mainimg" />
+      <MainImgWrapper className="mainimg">
+        <MainText className="mainText">
+          {"선한 사람들이 모여\n따뜻한 진료를 시작합니다."}
+        </MainText>
+      </MainImgWrapper>
       <Container>
         <MainContainer className="mainback">
           <MainTitleWrapper>주요 진료</MainTitleWrapper>
@@ -55,9 +73,13 @@ export const Home = () => {
           <DetailContentsBox />
           <DetailContentsBox />
         </MainContainer>
-        <img className="banner" alt="banner" />
+        <BannerImg className="banner">
+          <BannerText className="bannerText">
+            {`제주선한병원은 우수한 의료진의 수준 높은 의료서비스를 바탕으로\n암 재활 및 중추신경계 재활, 수술 후 회복기 재활에 최선을 다하고 있습니다.\n특히, 암 재활은 암 재발 및 전이를 억제하고 항암 및 방사선 치료의 부작용을 덜어주면서\n면역력을 극대화 할 수 있는 통합적인 지지체계 프로그램으로 운영되고 있습니다.`}
+          </BannerText>
+        </BannerImg>
         <InfoContainer>
-          <MapWrapper className="map" alt="map" />
+          <MapWrapper className="map" />
           <InfoWrapper />
           <InfoWrapper />
           <InfoWrapper />
@@ -68,26 +90,35 @@ export const Home = () => {
 };
 
 const Container = styled.div`
-  width: 1260px;
+  max-width: 1260px;
   margin: auto;
 
-  @media only screen and (max-width: ${response.desktop}px) {
-    width: 280px;
+  @media only screen and (max-width: ${response.mobile}px) {
+    min-width: 280px;
     margin: auto;
   }
 `;
 
 const MainImgWrapper = styled.div`
   width: 100vw;
-  min-width: 1260px;
+  /* min-width: 1260px; */
   height: 600px;
   background: center / cover no-repeat;
-  @media only screen and (max-width: ${response.desktop}px) {
-    width: 280px;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  @media only screen and (max-width: ${response.mobile}px) {
     height: 233px;
-    background: center / contain no-repeat;
-    min-width: auto;
   }
+`;
+
+const MainText = styled.div`
+  color: white;
+  font-size: 45px;
+  font-weight: 500;
+  white-space: pre;
+  margin: 100px 5%;
+  max-width: 498px;
 `;
 
 const MainContainer = styled.div`
@@ -96,7 +127,7 @@ const MainContainer = styled.div`
   column-gap: 24px;
   background: center / cover no-repeat;
   padding: 20px 30px;
-  @media only screen and (max-width: ${response.desktop}px) {
+  @media only screen and (max-width: ${response.mobile}px) {
     grid-template-columns: repeat(6, 1fr);
     padding: 20px;
   }
@@ -109,7 +140,7 @@ const MainTitleWrapper = styled.div`
   align-items: center;
   ${theme.typography.title1};
   padding: 20px 0;
-  @media only screen and (max-width: ${response.desktop}px) {
+  @media only screen and (max-width: ${response.mobile}px) {
     grid-column: span 6;
     font-size: 20px;
     padding: 0 0 20px 0;
@@ -123,10 +154,33 @@ const DetailContentsBox = styled.div`
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
   background-color: white;
   margin-bottom: 20px;
-  @media only screen and (max-width: ${response.desktop}px) {
+  @media only screen and (max-width: ${response.pad}px) {
     grid-column: span 6;
     height: 225px;
   }
+`;
+
+const BannerImg = styled.div`
+  max-width: 1260px;
+  width: 100%;
+  height: 400px;
+  background: center / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (max-width: ${response.mobile}px) {
+    height: 300px;
+  }
+`;
+
+const BannerText = styled.div`
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  white-space: pre;
+  text-align: center;
+  display: block;
+  word-break: break-all;
 `;
 
 const InfoContainer = styled.div`
@@ -134,21 +188,28 @@ const InfoContainer = styled.div`
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(7, 1fr);
   column-gap: 24px;
+  height: 730px;
   row-gap: 12px;
   padding: 50px 30px;
-  @media only screen and (max-width: ${response.desktop}px) {
+  @media only screen and (max-width: ${response.mobile}px) {
     grid-template-columns: repeat(6, 1fr);
     padding: 15px;
     grid-template-rows: none;
+    height: auto;
   }
 `;
 
-const MapWrapper = styled.img`
-  width: auto;
+const MapWrapper = styled.div`
   grid-column: span 8;
+  background: center / cover no-repeat;
   grid-row: span 7;
-  @media only screen and (max-width: ${response.desktop}px) {
+  height: 570px;
+  @media only screen and (max-width: ${response.pad}px) {
+    grid-column: span 12;
+  }
+  @media only screen and (max-width: ${response.mobile}px) {
     grid-column: span 6;
+    height: 250px;
   }
 `;
 
@@ -157,7 +218,10 @@ const InfoWrapper = styled.div`
   grid-row: span 2;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
-  @media only screen and (max-width: ${response.desktop}px) {
+  @media only screen and (max-width: ${response.pad}px) {
+    grid-column: span 12;
+  }
+  @media only screen and (max-width: ${response.mobile}px) {
     grid-column: span 6;
   }
 `;

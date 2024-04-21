@@ -29,7 +29,7 @@ const Container = styled.div<{ left: number }>`
   width: 260px;
   position: fixed;
   left: ${({ left }) => left && left}px;
-  top: 100;
+  top: 100px;
   display: flex;
   flex-direction: column;
   background-color: white;
