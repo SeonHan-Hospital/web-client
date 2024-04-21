@@ -7,6 +7,8 @@ import { useCallback, useEffect, useState } from "react";
 import { HeaderModal } from "./HeaderModal";
 import MobileLogo from "./MobileLogo.svg";
 import MobileIcon from "./MobileIcon.svg";
+import { MobileGNB } from "./MobileGnb";
+import close from "./close.svg";
 
 export const Header = () => {
   const [menuLefts, setMenuLefts] = useState<(number | undefined)[]>([]);
@@ -19,6 +21,7 @@ export const Header = () => {
   ]);
   const [isMobile, setIsMobile] = useState(false);
   const [isDesktop, setIsDesktop] = useState(true);
+  const [isGNB, setIsGNB] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -53,7 +56,8 @@ export const Header = () => {
           return null;
         });
     }
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [window.innerWidth]);
 
   const handleHoverMenus = useCallback((idx: number) => {
     const arr = new Array(5).fill(false);
@@ -66,20 +70,36 @@ export const Header = () => {
     setIsMenus(arr);
   }, []);
 
+  const handleMobileGNB = useCallback(() => {
+    setIsGNB(!isGNB);
+  }, [isGNB]);
+
   return (
     <>
       {isMobile ? (
-        <MobileHeaderContainer>
-          <MobileLogoWrapper>
-            <MobileLogoImg
-              src={MobileLogo}
-              style={{ marginLeft: 10 }}
-              alt="logo"
-              width={151.37}
-            />
-          </MobileLogoWrapper>
-          <MobileLogoImg src={MobileIcon} alt="icon" />
-        </MobileHeaderContainer>
+        <>
+          {isGNB && <MobileGNB />}
+          <MobileHeaderContainer>
+            <MobileLogoWrapper>
+              <MobileLogoImg src={MobileLogo} alt="logo" width={151.37} />
+            </MobileLogoWrapper>
+            {isGNB ? (
+              <CloseImgWrapper>
+                <MobileCloseImg
+                  src={close}
+                  alt="close"
+                  onClick={handleMobileGNB}
+                />
+              </CloseImgWrapper>
+            ) : (
+              <MobileLogoImg
+                src={MobileIcon}
+                alt="icon"
+                onClick={handleMobileGNB}
+              />
+            )}
+          </MobileHeaderContainer>
+        </>
       ) : (
         <>
           <HeaderContainer fixed={true}>
@@ -236,19 +256,38 @@ const Call = styled.div`
 `;
 
 const MobileHeaderContainer = styled.div`
+  position: fixed;
   width: 100%;
   height: 60px;
-  position: fixed;
   display: flex;
   justify-content: space-between;
   top: 0;
+  z-index: 2;
 `;
 
 const MobileLogoWrapper = styled.div`
   display: flex;
+  z-index: 2;
   align-items: center;
 `;
 
 const MobileLogoImg = styled.img`
+  z-index: 2;
   cursor: pointer;
+  margin-left: 10px;
+`;
+
+const CloseImgWrapper = styled.div`
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const MobileCloseImg = styled.img`
+  z-index: 2;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
 `;
