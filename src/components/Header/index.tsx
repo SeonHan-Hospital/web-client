@@ -253,6 +253,12 @@ const Call = styled.div`
   background-color: ${theme.palette.primaryLight};
   color: white;
   border-radius: 4px;
+
+  @media only screen and (max-width: 1100px) {
+    margin-right: 20px;
+    width: 48px;
+    padding-left: 10px;
+  }
 `;
 
 const MobileHeaderContainer = styled.div`
