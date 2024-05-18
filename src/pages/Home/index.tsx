@@ -137,6 +137,10 @@ const MainText = styled.div`
   white-space: pre;
   margin: 100px 5%;
   max-width: 498px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `;
 
 const MainContainer = styled.div`
@@ -167,11 +171,16 @@ const MainTitleWrapper = styled.div`
 
 const DetailContentsBox = styled.div`
   grid-column: span 4;
-  height: 400px;
+  min-height: 400px;
   border-radius: 8px;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
   background-color: white;
   margin-bottom: 20px;
+  cursor: pointer;
+
+  /* &:hover {
+    padding-top: 20px;
+  } */
   @media only screen and (max-width: ${response.pad}px) {
     grid-column: span 6;
     height: 225px;
@@ -202,6 +211,10 @@ const BannerText = styled.div`
   text-align: center;
   display: block;
   word-break: break-all;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `;
 
 const InfoContainer = styled.div`
@@ -251,7 +264,7 @@ const InfoWrapper = styled.div<{ size: number; minHeight?: number }>`
   justify-content: center;
   min-width: 255px;
   max-height: 180px;
-  min-height: 150px;
+  min-height: 155px;
   ${(props) => props.minHeight && `min-Height: ${props.minHeight}px;`}
   @media only screen and (max-width: ${response.pad}px) {
     grid-column: span 12;

@@ -9,6 +9,7 @@ import MobileLogo from "./MobileLogo.svg";
 import MobileIcon from "./MobileIcon.svg";
 import { MobileGNB } from "./MobileGnb";
 import close from "./close.svg";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
   const [menuLefts, setMenuLefts] = useState<(number | undefined)[]>([]);
@@ -22,6 +23,7 @@ export const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isDesktop, setIsDesktop] = useState(true);
   const [isGNB, setIsGNB] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -74,6 +76,17 @@ export const Header = () => {
     setIsGNB(!isGNB);
   }, [isGNB]);
 
+  const handleNavigate = useCallback(
+    (path: string) => {
+      navigate(path);
+    },
+    [navigate]
+  );
+
+  const handleLogoNav = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
   return (
     <>
       {isMobile ? (
@@ -81,7 +94,12 @@ export const Header = () => {
           {isGNB && <MobileGNB />}
           <MobileHeaderContainer>
             <MobileLogoWrapper>
-              <MobileLogoImg src={MobileLogo} alt="logo" width={151.37} />
+              <MobileLogoImg
+                src={MobileLogo}
+                alt="logo"
+                width={151.37}
+                onClick={handleLogoNav}
+              />
             </MobileLogoWrapper>
             {isGNB ? (
               <CloseImgWrapper>
@@ -105,7 +123,7 @@ export const Header = () => {
           <HeaderContainer fixed={true}>
             <Wrapper>
               <LogoWrapper>
-                <Logo src={logo} alt="logo" />
+                <Logo src={logo} alt="logo" onClick={handleLogoNav} />
               </LogoWrapper>
               <GnbContainer>
                 {menus.map((el, idx) => (
@@ -114,6 +132,7 @@ export const Header = () => {
                     id={`menu${idx}`}
                     onMouseOver={() => handleHoverMenus(idx)}
                     onMouseOut={handleMouseOut}
+                    onClick={() => handleNavigate(el.path)}
                   >
                     {el.label}
                   </Menu>

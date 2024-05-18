@@ -1,7 +1,7 @@
 export const menus = [
   {
     label: "병원 소개",
-    path: "/about",
+    path: "/병원소개",
   },
   {
     label: "일반재활센터",
