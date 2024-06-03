@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Layout } from "../../components/Layout";
 import { AboutNavi } from "./data";
 import { useState } from "react";
-import { Tap1 } from "./Tap1";
+import { About1 } from "./About1";
 
 export const About = () => {
   const [tap, setTap] = useState(0);
@@ -18,7 +18,7 @@ export const About = () => {
             </Navi>
           ))}
         </NaviWrapper>
-        {tap === 0 && <Tap1 />}
+        {tap === 0 && <About1 />}
       </Container>
     </Layout>
   );
@@ -55,4 +55,5 @@ const Navi = styled.div<{ spotlight: boolean }>`
   align-items: center;
   margin: 0 20px;
   color: ${(props) => props.spotlight && "#1467B0"};
+  cursor: pointer;
 `;
