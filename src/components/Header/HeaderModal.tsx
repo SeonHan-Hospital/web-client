@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 interface IProps {
@@ -13,14 +14,22 @@ export const HeaderModal = ({
   handleMouseOver,
   handleMouseOut,
 }: IProps) => {
+  const navigate = useNavigate();
+
   return (
     <Container
       left={left}
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
-      <Wrapper>병원장 인사말 & 의료진 소개</Wrapper>
-      <Wrapper>병원장 인사말 & 의료진 소개</Wrapper>
+      {menus.map((el) => (
+        <Wrapper
+          key={el.label}
+          onClick={() => navigate(el.path, { state: { tap: el.tap } })}
+        >
+          {el.label}
+        </Wrapper>
+      ))}
     </Container>
   );
 };

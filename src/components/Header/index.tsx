@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import logo from "./logo.svg";
-import { menus } from "./data";
+import { menus, modalMenus } from "./data";
 import theme from "../../styles/theme";
 import callIcon from "./call_icon.svg";
 import { useCallback, useEffect, useState } from "react";
@@ -156,7 +156,7 @@ export const Header = () => {
               handleMouseOver={() => handleHoverMenus(0)}
               handleMouseOut={handleMouseOut}
               left={menuLefts[0] || 0}
-              menus={[]}
+              menus={modalMenus[0]}
             />
           )}
           {isMenus[1] && (
@@ -164,7 +164,7 @@ export const Header = () => {
               handleMouseOver={() => handleHoverMenus(1)}
               handleMouseOut={handleMouseOut}
               left={menuLefts[1] || 0}
-              menus={[]}
+              menus={modalMenus[1]}
             />
           )}
           {isMenus[2] && (
@@ -172,7 +172,7 @@ export const Header = () => {
               handleMouseOver={() => handleHoverMenus(2)}
               handleMouseOut={handleMouseOut}
               left={menuLefts[2] || 0}
-              menus={[]}
+              menus={modalMenus[2]}
             />
           )}
           {isMenus[3] && (
@@ -180,7 +180,7 @@ export const Header = () => {
               handleMouseOver={() => handleHoverMenus(3)}
               handleMouseOut={handleMouseOut}
               left={menuLefts[3] || 0}
-              menus={[]}
+              menus={modalMenus[3]}
             />
           )}
           {isMenus[4] && (
@@ -188,7 +188,7 @@ export const Header = () => {
               handleMouseOver={() => handleHoverMenus(4)}
               handleMouseOut={handleMouseOut}
               left={menuLefts[4] || 0}
-              menus={[]}
+              menus={modalMenus[4]}
             />
           )}
         </>
