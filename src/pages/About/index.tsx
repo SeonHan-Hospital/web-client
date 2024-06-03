@@ -31,7 +31,6 @@ const Container = styled.div`
 
 const MainImg = styled.div`
   width: 100vw;
-  left: 0;
   height: 360px;
   background-color: gray;
 `;
