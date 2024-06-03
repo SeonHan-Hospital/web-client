@@ -38,6 +38,7 @@ const SubTitle = styled.div`
   align-items: center;
   font-size: 18px;
 `;
+
 const TableWrapper = styled.div`
   display: flex;
   flex-direction: column;
