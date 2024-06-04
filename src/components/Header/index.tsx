@@ -95,7 +95,7 @@ export const Header = () => {
     <>
       {isMobile ? (
         <>
-          {isGNB && <MobileGNB />}
+          {isGNB && <MobileGNB handleGNB={handleMobileGNB} />}
           <MobileHeaderContainer>
             <MobileLogoWrapper>
               <MobileLogoImg

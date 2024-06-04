@@ -1,18 +1,83 @@
 import styled from "styled-components";
-import { menus } from "./data";
+import { menus, modalMenus } from "./data";
 import down from "./down.svg";
+import up from "./up.svg";
+import { useCallback, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { emptyAlert } from "../../utils/functinos";
 
-export const MobileGNB = () => {
+interface IProps {
+  handleGNB: () => void;
+}
+
+export const MobileGNB = ({ handleGNB }: IProps) => {
+  const [open, setOpen] = useState<boolean[]>([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+  const navigate = useNavigate();
+
+  const handleOpen = useCallback(
+    (idx: number) => {
+      const arr = [...open];
+      arr[idx] = !arr[idx];
+      setOpen(arr);
+    },
+    [open]
+  );
+
+  const handleNavi = useCallback(
+    (path: string, tap: number) => {
+      if (path === "/이용안내" && tap === 0) {
+        navigate(path, {
+          state: {
+            tap,
+          },
+        });
+        handleGNB();
+      } else {
+        emptyAlert();
+      }
+    },
+    [navigate]
+  );
+
   return (
     <Container>
       <Backdrop />
       {menus.map((el, idx) => (
-        <Menu key={idx}>
-          <MenuText>{el.label}</MenuText>
-          <IconWrapper>
-            <img src={down} alt="down" />
-          </IconWrapper>
-        </Menu>
+        <div style={{ zIndex: 10 }} key={idx}>
+          <Menu onClick={() => handleOpen(idx)}>
+            <MenuText>{el.label}</MenuText>
+            <IconWrapper>
+              <img src={open[idx] ? up : down} alt="icon" />
+            </IconWrapper>
+          </Menu>
+          {open[idx] &&
+            modalMenus[idx].map((modalEl) => (
+              <Drop
+                key={modalEl.label}
+                style={{
+                  backgroundColor:
+                    modalEl.label !== "비급여항목" ? "#DDDDDD" : "white",
+                  color: modalEl.label !== "비급여항목" ? "gray" : "black",
+                }}
+                onClick={() => handleNavi(modalEl.path, modalEl.tap)}
+              >
+                <DropText
+                  style={{
+                    textDecoration:
+                      modalEl.label !== "비급여항목" ? "line-through" : "none",
+                  }}
+                >
+                  {"- " + modalEl.label}
+                </DropText>
+              </Drop>
+            ))}
+        </div>
       ))}
     </Container>
   );
@@ -37,7 +102,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 2;
-  overflow-y: hidden;
+  overflow-y: scroll;
 `;
 
 const Menu = styled.div`
@@ -62,4 +127,22 @@ const IconWrapper = styled.div`
   align-items: center;
   width: 60px;
   height: 60px;
+  z-index: 99;
+`;
+
+const Drop = styled.div`
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: 99;
+`;
+
+const DropText = styled.div`
+  width: 90%;
+  height: 50px;
+  display: flex;
+  align-items: center;
 `;
