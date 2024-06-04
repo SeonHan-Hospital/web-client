@@ -1,5 +1,7 @@
+import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { emptyAlert } from "../../utils/functinos";
 
 interface IProps {
   menus: any[];
@@ -16,6 +18,21 @@ export const HeaderModal = ({
 }: IProps) => {
   const navigate = useNavigate();
 
+  const handleNavi = useCallback(
+    (path: string, tap: number) => {
+      if (path === "/이용안내" && tap === 0) {
+        navigate(path, {
+          state: {
+            tap: tap,
+          },
+        });
+      } else {
+        emptyAlert();
+      }
+    },
+    [navigate]
+  );
+
   return (
     <Container
       left={left}
@@ -23,10 +40,7 @@ export const HeaderModal = ({
       onMouseOut={handleMouseOut}
     >
       {menus.map((el) => (
-        <Wrapper
-          key={el.label}
-          onClick={() => navigate(el.path, { state: { tap: el.tap } })}
-        >
+        <Wrapper key={el.label} onClick={() => handleNavi(el.path, el.tap)}>
           {el.label}
         </Wrapper>
       ))}

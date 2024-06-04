@@ -10,6 +10,7 @@ import MobileIcon from "./MobileIcon.svg";
 import { MobileGNB } from "./MobileGnb";
 import close from "./close.svg";
 import { useNavigate } from "react-router-dom";
+import { emptyAlert } from "../../utils/functinos";
 
 export const Header = () => {
   const [menuLefts, setMenuLefts] = useState<(number | undefined)[]>([]);
@@ -78,7 +79,10 @@ export const Header = () => {
 
   const handleNavigate = useCallback(
     (path: string) => {
-      navigate(path);
+      if (path === "/이용안내") navigate(path);
+      else {
+        emptyAlert();
+      }
     },
     [navigate]
   );
@@ -139,7 +143,7 @@ export const Header = () => {
                 ))}
               </GnbContainer>
               <CallWrapper>
-                <Call>
+                <Call href="tel:010-4654-9708">
                   <img
                     src={callIcon}
                     alt="icon"
@@ -262,7 +266,7 @@ const CallWrapper = styled.div`
   align-items: center;
 `;
 
-const Call = styled.div`
+const Call = styled.a`
   width: 198px;
   height: 48px;
   display: flex;

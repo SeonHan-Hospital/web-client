@@ -2,11 +2,20 @@ import styled from "styled-components";
 import { Layout } from "../../components/Layout";
 import background from "./background.svg";
 import { AboutNavi } from "./data";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Info1 } from "./Info1";
+import { emptyAlert } from "../../utils/functinos";
 
 export const Info = () => {
   const [tap, setTap] = useState(0);
+
+  const handleTap = useCallback((idx: number) => {
+    if (idx !== 0) {
+      emptyAlert();
+    } else {
+      setTap(idx);
+    }
+  }, []);
 
   return (
     <Layout>
@@ -15,7 +24,11 @@ export const Info = () => {
         <NaviWrapper>
           <NaviBox>
             {AboutNavi.map((el) => (
-              <Navi key={el.id} spotlight={el.id === tap}>
+              <Navi
+                key={el.id}
+                spotlight={el.id === tap}
+                onClick={() => handleTap(el.id)}
+              >
                 {el.label}
               </Navi>
             ))}
