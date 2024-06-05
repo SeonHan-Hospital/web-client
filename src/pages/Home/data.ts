@@ -23,7 +23,7 @@ export const Infos = [
   },
   {
     label: ["Tel", "E-mail"],
-    content: ["wodnr0710@naver.com", "전화 010-4654-9708 / 팩스 010-4654-9708"],
+    content: ["sunhan0054@naver.com", "전화 064-722-0054 / 팩스 064-722-0064"],
     icon: [call, email],
     row: 2,
   },
