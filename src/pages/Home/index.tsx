@@ -220,11 +220,11 @@ const MainText = styled.div`
 const Imgs = styled.img`
   width: 100%;
   border-radius: 8px 8px 0 0;
-  height: 282px;
+  height: 250px;
   object-fit: cover;
 
-  @media only screen and (max-width: 500px) {
-    height: 240px;
+  @media only screen and (max-width: ${response.pad}px) {
+    height: 225px;
   }
 `;
 
