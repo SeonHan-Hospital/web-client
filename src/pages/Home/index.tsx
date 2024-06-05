@@ -14,6 +14,8 @@ import img3 from "./img3.svg";
 import img4 from "./img4.svg";
 import img5 from "./img5.svg";
 import img6 from "./img6.svg";
+import img7 from "./img7.svg";
+import img8 from "./img7.svg";
 import { Infos } from "./data";
 
 export const Home = () => {
@@ -73,7 +75,7 @@ export const Home = () => {
         <MainContainer className="mainback">
           <MainTitleWrapper>주요 진료</MainTitleWrapper>
           <DetailTitleWrapper>
-            <DetailTitle>일반재활센터</DetailTitle>
+            <DetailTitle>재활치료센터</DetailTitle>
           </DetailTitleWrapper>
           <DetailContentsBox>
             <Imgs src={img1} alt="통증치료" />
@@ -102,9 +104,25 @@ export const Home = () => {
               수행하도록 합니다.{" "}
             </ContentsText>
           </DetailContentsBox>
+          <DetailContentsBox>
+            <Imgs src={img5} alt="도수치료" />
+            <ContentsTitle>도수치료</ContentsTitle>
+            <ContentsText>
+              재활 도수치료사가 진단하여 1:1 맞춤 치료로 인체 구조와 기능적
+              이상상태를 바로 잡고 통증을 해소합니다.
+            </ContentsText>
+          </DetailContentsBox>
           <DetailTitleWrapper>
-            <DetailTitle>암재활센터</DetailTitle>
+            <DetailTitle>암면역센터</DetailTitle>
           </DetailTitleWrapper>
+          <DetailContentsBox>
+            <Imgs src={img7} alt="온열치료" />
+            <ContentsTitle>온열치료</ContentsTitle>
+            <ContentsText>
+              종양 조직에 고온의 열을 가하여 종양세포를 과사시키게 하는
+              치료입니다.
+            </ContentsText>
+          </DetailContentsBox>
           <DetailContentsBox>
             <Imgs src={img4} alt="면역치료" />
             <ContentsTitle>면역치료</ContentsTitle>
@@ -114,20 +132,19 @@ export const Home = () => {
             </ContentsText>
           </DetailContentsBox>
           <DetailContentsBox>
-            <Imgs src={img5} alt="도수치료" />
-            <ContentsTitle>도수치료</ContentsTitle>
+            <Imgs src={img6} alt="페인닥터" />
+            <ContentsTitle>페인닥터</ContentsTitle>
             <ContentsText>
-              재활 도수치료사가 진단하여 1:1 맞춤 치료로 인체 구조와 기능적
-              이상상태를 바로 잡고 통증을 해소합니다.
+              신경자극 수용체에 전달된 신호가 통증 교란 신호로 작용하여 통증의
+              정보를 교란시키는 비침습적 무통증 신호요법입니다.
             </ContentsText>
           </DetailContentsBox>
           <DetailContentsBox>
-            <Imgs src={img6} alt="물리치료" />
-            <ContentsTitle>물리치료</ContentsTitle>
+            <Imgs src={img8} alt="림프도수치료" />
+            <ContentsTitle>림프도수치료</ContentsTitle>
             <ContentsText>
-              암 치료 과정 중에 발생한 신체 조직 손상, 기능 저하, 암성 통증 등
-              다양한 부작용 관리에 초점이 맞춰진 암 특화 물리 치료로 통증을
-              완화시키고 손실된 기능을 증진시켜드립니다.
+              치료사의 손을 이용하여 림프의 이동을 촉진시켜 림프 순환으로 부종을
+              해결합니다.
             </ContentsText>
           </DetailContentsBox>
         </MainContainer>
@@ -275,8 +292,8 @@ const DetailTitle = styled.div`
 `;
 
 const DetailContentsBox = styled.div`
-  grid-column: span 4;
-  min-height: 524px;
+  grid-column: span 3;
+  min-height: 500px;
   border-radius: 8px;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
   background-color: white;

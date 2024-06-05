@@ -42,7 +42,7 @@ export const MobileGNB = ({ handleGNB }: IProps) => {
         emptyAlert();
       }
     },
-    [navigate]
+    [navigate, handleGNB]
   );
 
   return (

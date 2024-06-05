@@ -28,6 +28,10 @@ const Title = styled.div`
   justify-content: center;
   align-items: center;
   ${theme.typography.title1};
+
+  @media only screen and (max-width: 500px) {
+    font-size: 20px;
+  }
 `;
 
 const SubTitle = styled.div`
@@ -37,6 +41,10 @@ const SubTitle = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 18px;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 14px;
+  }
 `;
 
 const TableWrapper = styled.div`

@@ -143,14 +143,14 @@ export const Header = () => {
                 ))}
               </GnbContainer>
               <CallWrapper>
-                <Call href="tel:010-4654-9708">
+                <Call href="tel:064-722-0054">
                   <img
                     src={callIcon}
                     alt="icon"
                     width={28}
                     style={{ marginRight: "10px" }}
                   />
-                  {isDesktop && "010-4654-9708"}
+                  {isDesktop && "064-722-0054"}
                 </Call>
               </CallWrapper>
             </Wrapper>
@@ -267,6 +267,7 @@ const CallWrapper = styled.div`
 `;
 
 const Call = styled.a`
+  all: unset;
   width: 198px;
   height: 48px;
   display: flex;
