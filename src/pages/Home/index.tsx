@@ -220,8 +220,12 @@ const MainText = styled.div`
 const Imgs = styled.img`
   width: 100%;
   border-radius: 8px 8px 0 0;
-  height: 305px;
+  height: 282px;
   object-fit: cover;
+
+  @media only screen and (max-width: 500px) {
+    height: 240px;
+  }
 `;
 
 const ContentsTitle = styled.div`
@@ -293,7 +297,7 @@ const DetailTitle = styled.div`
 
 const DetailContentsBox = styled.div`
   grid-column: span 3;
-  min-height: 500px;
+  height: 524px;
   border-radius: 8px;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
   background-color: white;
@@ -305,7 +309,7 @@ const DetailContentsBox = styled.div`
   } */
   @media only screen and (max-width: ${response.pad}px) {
     grid-column: span 6;
-    height: 225px;
+    height: 450px;
   }
 `;
 
