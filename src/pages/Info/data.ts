@@ -69,7 +69,7 @@ export const TableDatas: ITableData[] = [
   {
     type: "검체검사료",
     code: "CZ3940000",
-    name: "인플루엔자 A-B 바이러스 항원검사[현장검사]",
+    name: "인플루엔자 A·B 바이러스 항원검사[현장검사]",
     price: "30,000",
     min: "",
     max: "",
@@ -93,7 +93,7 @@ export const TableDatas: ITableData[] = [
   {
     type: "이학요법료",
     code: "MZ0090000",
-    name: "전신화 인지재활치료[주의 - 기억]",
+    name: "전산화 인지재활치료[주의·기억]",
     price: "30,000",
     min: "",
     max: "",
