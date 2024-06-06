@@ -10,7 +10,7 @@ interface IProps {
 
 export const Layout = ({ children }: IProps) => {
   return (
-    <Root>
+    <Root translate="no">
       <Container>
         <Header />
         <Content>{children}</Content>
