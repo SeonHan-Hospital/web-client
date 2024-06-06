@@ -25,6 +25,11 @@ const Root = styled.div`
   overflow-y: auto;
   font-family: "Noto Sans KR";
   height: 100vh;
+
+  -webkit-user-select: none; /* for Chrome/Safari */
+  -moz-user-select: none; /* for Firefox */
+  -ms-user-select: none; /* for IE/Edge */
+  user-select: none;
 `;
 
 const Container = styled.div`
