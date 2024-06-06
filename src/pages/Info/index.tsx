@@ -59,7 +59,7 @@ const NaviWrapper = styled.div`
   width: 100%;
   height: 80px;
   border-bottom: 1px solid #eeeeee;
-  overflow-x: scroll;
+  overflow-x: auto;
   @media only screen and (max-width: 500px) {
     width: 100vw;
   }

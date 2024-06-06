@@ -52,7 +52,7 @@ const TableWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
   margin: 80px 0;
 
   @media only screen and (max-width: 1000px) {

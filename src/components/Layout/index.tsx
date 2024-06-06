@@ -23,6 +23,7 @@ export const Layout = ({ children }: IProps) => {
 const Root = styled.div`
   display: flex;
   overflow-y: auto;
+  font-family: "Noto Sans KR";
   height: 100vh;
 `;
 
