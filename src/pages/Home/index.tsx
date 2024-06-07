@@ -233,10 +233,14 @@ const ContentsTitle = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 30px;
-  height: 55px;
+  margin-bottom: 20px;
   color: ${theme.palette.primaryLight};
   font-weight: bold;
   font-size: 20px;
+
+  @media only screen and (max-width: ${response.pad}px) {
+    margin-top: 20px;
+  }
 `;
 
 const ContentsText = styled.div`
@@ -355,7 +359,7 @@ const InfoContainer = styled.div`
   height: 600px;
   padding: 50px 30px;
   @media only screen and (max-width: ${response.pad}px) {
-    height: 900px;
+    height: 1000px;
     grid-template-rows: repeat(15, 1fr);
   }
   @media only screen and (max-width: ${response.mobile}px) {
@@ -372,7 +376,7 @@ const MapWrapper = styled.div`
   height: 570px;
   @media only screen and (max-width: ${response.pad}px) {
     grid-column: span 12;
-    height: 250px;
+    height: 400px;
     grid-row: span 4;
   }
   @media only screen and (max-width: ${response.mobile}px) {

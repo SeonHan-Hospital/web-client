@@ -3,7 +3,7 @@ import { createGlobalStyle, css } from "styled-components";
 
 export const response = {
   desktop: 1260,
-  pad: 768,
+  pad: 890,
   mobile: 500,
 };
 export const px2vw = (size: number, width = response.pad) =>
