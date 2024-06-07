@@ -36,7 +36,7 @@ export const Header = () => {
           document.getElementById("menu3")?.getBoundingClientRect().left,
           document.getElementById("menu4")?.getBoundingClientRect().left,
         ]);
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 890) {
           setIsMobile(false);
         } else {
           setIsMobile(true);
@@ -243,6 +243,10 @@ const GnbContainer = styled.div`
   align-items: center;
   margin: 0 20px;
   height: 100px;
+
+  @media only screen and (max-width: 1100px) {
+    grid-column: span 9;
+  }
 `;
 
 const Menu = styled.div`
@@ -257,6 +261,10 @@ const Menu = styled.div`
   &:hover {
     background-color: rgba(0, 67, 109, 0.05);
   }
+
+  @media only screen and (max-width: 1000px) {
+    padding: 0;
+  }
 `;
 
 const CallWrapper = styled.div`
@@ -264,6 +272,12 @@ const CallWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* margin-right: 20px; */
+
+  @media only screen and (max-width: 1100px) {
+    grid-column: span 1;
+    margin: 0;
+  }
 `;
 
 const Call = styled.a`
@@ -279,7 +293,6 @@ const Call = styled.a`
   border-radius: 4px;
 
   @media only screen and (max-width: 1100px) {
-    margin-right: 20px;
     width: 48px;
     padding-left: 10px;
   }
