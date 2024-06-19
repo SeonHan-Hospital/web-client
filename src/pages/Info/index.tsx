@@ -6,9 +6,12 @@ import { useCallback, useState } from "react";
 import { Info1 } from "./Info1";
 import { emptyAlert } from "../../utils/functinos";
 import { Info2 } from "./Info2";
+import { useLocation } from "react-router-dom";
 
 export const Info = () => {
-  const [tap, setTap] = useState(0);
+  const location = useLocation();
+  const stateTap = location.state ? location.state.tap : 0;
+  const [tap, setTap] = useState(stateTap);
 
   const handleTap = useCallback((idx: number) => {
     if (idx === 2) {

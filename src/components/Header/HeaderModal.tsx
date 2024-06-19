@@ -26,6 +26,12 @@ export const HeaderModal = ({
             tap: tap,
           },
         });
+      } else if (path === "/이용안내" && tap === 1) {
+        navigate(path, {
+          state: {
+            tap: tap,
+          },
+        });
       } else {
         emptyAlert();
       }
