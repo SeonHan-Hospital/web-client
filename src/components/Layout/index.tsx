@@ -30,6 +30,9 @@ const Root = styled.div`
   -moz-user-select: none; /* for Firefox */
   -ms-user-select: none; /* for IE/Edge */
   user-select: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const Container = styled.div`
