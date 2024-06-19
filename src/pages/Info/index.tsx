@@ -5,12 +5,13 @@ import { AboutNavi } from "./data";
 import { useCallback, useState } from "react";
 import { Info1 } from "./Info1";
 import { emptyAlert } from "../../utils/functinos";
+import { Info2 } from "./Info2";
 
 export const Info = () => {
   const [tap, setTap] = useState(0);
 
   const handleTap = useCallback((idx: number) => {
-    if (idx !== 0) {
+    if (idx === 2) {
       emptyAlert();
     } else {
       setTap(idx);
@@ -35,6 +36,7 @@ export const Info = () => {
           </NaviBox>
         </NaviWrapper>
         {tap === 0 && <Info1 />}
+        {tap === 1 && <Info2 />}
       </Container>
     </Layout>
   );
