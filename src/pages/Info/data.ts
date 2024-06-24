@@ -314,4 +314,20 @@ export const TableDatas: ITableData[] = [
     min: "200,000",
     max: "300,000",
   },
+  {
+    type: "이뮤코텔/이뮨셀엘씨주",
+    code: "PDZ090007",
+    name: "이뮤코텔주 1mg",
+    price: "350,000",
+    min: "",
+    max: "",
+  },
+  {
+    type: "이뮤코텔/이뮨셀엘씨주",
+    code: "MX1220000",
+    name: "이뮨센엘씨주 200mL",
+    price: "5,000,000",
+    min: "",
+    max: "",
+  },
 ];

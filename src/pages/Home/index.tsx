@@ -15,7 +15,7 @@ import img4 from "./img4.svg";
 import img5 from "./img5.svg";
 import img6 from "./img6.svg";
 import img7 from "./img7.svg";
-import img8 from "./img7.svg";
+import img8 from "./img8.svg";
 import { Infos } from "./data";
 
 export const Home = () => {
@@ -78,7 +78,25 @@ export const Home = () => {
             <DetailTitle>재활치료센터</DetailTitle>
           </DetailTitleWrapper>
           <DetailContentsBox>
-            <Imgs src={img1} alt="통증치료" />
+            <Imgs src={img1} alt="신경계재활" />
+            <ContentsTitle>신경계재활</ContentsTitle>
+            <ContentsText>
+              보바스 치료, PNF, 중추 신경계발달치료 등 전문적인 교육과정을
+              120시간 이상 이수한 물리치료사가 환자와 1:1로 집중적인 운동을
+              시행합니다.
+            </ContentsText>
+          </DetailContentsBox>
+          <DetailContentsBox>
+            <Imgs src={img2} alt="작업치료" />
+            <ContentsTitle>작업치료</ContentsTitle>
+            <ContentsText>
+              질병이나 사고로 인해서 신체적, 정신적으로 손상을 받은 환자들에게
+              능동적이고, 목적있는 활동을 제공하며 의미있고, 유용한 작업을
+              수행하도록 합니다.
+            </ContentsText>
+          </DetailContentsBox>
+          <DetailContentsBox>
+            <Imgs src={img3} alt="통증치료" />
             <ContentsTitle>통증치료</ContentsTitle>
             <ContentsText>
               고통의 감소나 염증 및 근경련의 완화, 근 재교육 등으로 통증을
@@ -87,29 +105,11 @@ export const Home = () => {
             </ContentsText>
           </DetailContentsBox>
           <DetailContentsBox>
-            <Imgs src={img2} alt="운동치료" />
-            <ContentsTitle>운동치료</ContentsTitle>
-            <ContentsText>
-              보바스 치료, PNF, 중추 신경계발달치료 등 전문적인 교육과정을
-              120시간 이상 이수한 물리치료사가 환자와 1:1로 집중적인 운동을
-              시행합니다.
-            </ContentsText>
-          </DetailContentsBox>
-          <DetailContentsBox>
-            <Imgs src={img3} alt="작업치료" />
-            <ContentsTitle>작업치료</ContentsTitle>
-            <ContentsText>
-              질병이나 사고로 인해서 신체적, 정신적으로 손상을 받은 환자들에게
-              능동적이고, 목적있는 활동을 제공하며 의미있고, 유용한 작업을
-              수행하도록 합니다.{" "}
-            </ContentsText>
-          </DetailContentsBox>
-          <DetailContentsBox>
             <Imgs src={img5} alt="도수치료" />
             <ContentsTitle>도수치료</ContentsTitle>
             <ContentsText>
-              재활 도수치료사가 진단하여 1:1 맞춤 치료로 인체 구조와 기능적
-              이상상태를 바로 잡고 통증을 해소합니다.
+              물리치료사가 1:1 맞춤 치료로 인체 구조와 기능적 이상상태를 바로
+              잡고 통증을 해소합니다.
             </ContentsText>
           </DetailContentsBox>
           <DetailTitleWrapper>
@@ -119,7 +119,7 @@ export const Home = () => {
             <Imgs src={img7} alt="온열치료" />
             <ContentsTitle>온열치료</ContentsTitle>
             <ContentsText>
-              종양 조직에 고온의 열을 가하여 종양세포를 과사시키게 하는
+              종양 조직에 고온의 열을 가하여 종양세포를 괴사시키게 하는
               치료입니다.
             </ContentsText>
           </DetailContentsBox>

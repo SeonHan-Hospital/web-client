@@ -22,18 +22,30 @@ export const Info2 = () => {
       </ImgContainer>
       <TableContainer>
         <Table>
-          <TableTitle>입원 시 준비사항</TableTitle>
+          <TableTitle>입원시 필요서류</TableTitle>
           <TableTextWrapper>
             <DotImg src={dotImg} />
-            <div>의사소견서, 진단서, 진료의뢰서 등</div>
+            <div>환자신분증, 진단서(치료확인서)</div>
           </TableTextWrapper>
           <TableTextWrapper>
             <DotImg src={dotImg} />
-            <div>투약기록지</div>
+            <div>검사결과지(내원 7일 이내)</div>
           </TableTextWrapper>
           <TableTextWrapper>
             <DotImg src={dotImg} />
-            <div>특수촬영 결과물(MRI, CT, EMG, X-RAY 등 판독지)</div>
+            <div>영상CD</div>
+          </TableTextWrapper>
+          <TableTextWrapper>
+            <DotImg src={dotImg} />
+            <div>수술 기록지</div>
+          </TableTextWrapper>
+          <TableTextWrapper>
+            <DotImg src={dotImg} />
+            <div>연하장애평가검사(VFSS)</div>
+          </TableTextWrapper>
+          <TableTextWrapper>
+            <DotImg src={dotImg} />
+            <div>퇴원약 복약지도서</div>
           </TableTextWrapper>
         </Table>
         <Table>
