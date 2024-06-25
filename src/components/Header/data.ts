@@ -80,14 +80,19 @@ export const modalMenus = [
       tap: 0,
     },
     {
-      label: "입퇴원안내",
+      label: "진료안내",
       path: "/이용안내",
       tap: 1,
     },
     {
-      label: "증명서발급",
+      label: "입퇴원안내",
       path: "/이용안내",
       tap: 2,
+    },
+    {
+      label: "증명서발급",
+      path: "/이용안내",
+      tap: 3,
     },
   ],
   [
