@@ -24,7 +24,7 @@ export const menus = [
 export const modalMenus = [
   [
     {
-      label: "병원장 인사말 & 의료진 소개",
+      label: "인사말",
       path: "/병원소개",
       tap: 0,
     },

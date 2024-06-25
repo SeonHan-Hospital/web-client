@@ -5,6 +5,7 @@ import styled from "styled-components";
 import background from "./background.svg";
 import { AboutNavi } from "./data";
 import { Intro1 } from "./Intro1";
+import { Intro3 } from "./Intro3";
 
 export const Intro = () => {
   const location = useLocation();
@@ -34,8 +35,7 @@ export const Intro = () => {
         </NaviWrapper>
         {tap === 0 && <Intro1 />}
         {/* {tap === 1 && <Info3 />} */}
-        {/* {tap === 2 && <Info2 />} */}
-        {/* {tap === 3 && <Info4 />}  */}
+        {tap === 2 && <Intro3 />}
       </Container>
     </Layout>
   );
