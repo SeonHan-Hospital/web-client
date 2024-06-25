@@ -6,6 +6,7 @@ import background from "./background.svg";
 import { AboutNavi } from "./data";
 import { Intro1 } from "./Intro1";
 import { Intro3 } from "./Intro3";
+import { Intro2 } from "./Intro2";
 
 export const Intro = () => {
   const location = useLocation();
@@ -18,7 +19,8 @@ export const Intro = () => {
 
   return (
     <Layout>
-      <MainImg style={{ backgroundImage: `url(${background})` }} />
+      {/* <MainImg style={{ backgroundImage: `url(${background})` }} /> */}
+      <Main src={background} alt="background" />
       <Container>
         <NaviWrapper>
           <NaviBox>
@@ -34,21 +36,17 @@ export const Intro = () => {
           </NaviBox>
         </NaviWrapper>
         {tap === 0 && <Intro1 />}
-        {/* {tap === 1 && <Info3 />} */}
+        {tap === 1 && <Intro2 />}
         {tap === 2 && <Intro3 />}
       </Container>
     </Layout>
   );
 };
 
-const MainImg = styled.div`
+const Main = styled.img`
   width: 100vw;
-  /* min-width: 1260px; */
-  height: 360px;
-  background: center / cover no-repeat;
-  display: flex;
-  justify-content: start;
-  align-items: end;
+  min-height: 200px;
+  object-fit: cover;
 `;
 
 const Container = styled.div`

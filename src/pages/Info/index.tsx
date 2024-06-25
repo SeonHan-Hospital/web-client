@@ -20,7 +20,7 @@ export const Info = () => {
 
   return (
     <Layout>
-      <MainImg style={{ backgroundImage: `url(${background})` }} />
+      <Main src={background} alt="background" />
       <Container>
         <NaviWrapper>
           <NaviBox>
@@ -44,14 +44,10 @@ export const Info = () => {
   );
 };
 
-const MainImg = styled.div`
+const Main = styled.img`
   width: 100vw;
-  /* min-width: 1260px; */
-  height: 360px;
-  background: center / cover no-repeat;
-  display: flex;
-  justify-content: start;
-  align-items: end;
+  object-fit: cover;
+  min-height: 200px;
 `;
 
 const Container = styled.div`
