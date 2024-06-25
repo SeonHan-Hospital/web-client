@@ -79,7 +79,7 @@ export const Header = () => {
 
   const handleNavigate = useCallback(
     (path: string) => {
-      if (path === "/이용안내") navigate(path);
+      if (path === "/이용안내" || path === "/병원소개") navigate(path);
       else {
         emptyAlert();
       }
