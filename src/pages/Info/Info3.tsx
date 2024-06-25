@@ -137,6 +137,10 @@ const TableContainer = styled.div`
   width: 100%;
   max-width: 1000px;
   margin-bottom: 80px;
+
+  @media only screen and (max-width: 1000px) {
+    width: 90%;
+  }
 `;
 
 const TableHeader = styled.div`

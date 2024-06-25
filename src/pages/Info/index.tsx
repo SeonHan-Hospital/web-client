@@ -4,10 +4,10 @@ import background from "./background.svg";
 import { AboutNavi } from "./data";
 import { useCallback, useState } from "react";
 import { Info1 } from "./Info1";
-import { emptyAlert } from "../../utils/functinos";
 import { Info2 } from "./Info2";
 import { useLocation } from "react-router-dom";
 import { Info3 } from "./Info3";
+import { Info4 } from "./Info4";
 
 export const Info = () => {
   const location = useLocation();
@@ -15,11 +15,7 @@ export const Info = () => {
   const [tap, setTap] = useState(stateTap);
 
   const handleTap = useCallback((idx: number) => {
-    if (idx > 2) {
-      emptyAlert();
-    } else {
-      setTap(idx);
-    }
+    setTap(idx);
   }, []);
 
   return (
@@ -42,6 +38,7 @@ export const Info = () => {
         {tap === 0 && <Info1 />}
         {tap === 1 && <Info3 />}
         {tap === 2 && <Info2 />}
+        {tap === 3 && <Info4 />}
       </Container>
     </Layout>
   );
