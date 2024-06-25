@@ -7,6 +7,7 @@ import { Info1 } from "./Info1";
 import { emptyAlert } from "../../utils/functinos";
 import { Info2 } from "./Info2";
 import { useLocation } from "react-router-dom";
+import { Info3 } from "./Info3";
 
 export const Info = () => {
   const location = useLocation();
@@ -14,7 +15,7 @@ export const Info = () => {
   const [tap, setTap] = useState(stateTap);
 
   const handleTap = useCallback((idx: number) => {
-    if (idx === 2) {
+    if (idx > 2) {
       emptyAlert();
     } else {
       setTap(idx);
@@ -39,7 +40,8 @@ export const Info = () => {
           </NaviBox>
         </NaviWrapper>
         {tap === 0 && <Info1 />}
-        {tap === 1 && <Info2 />}
+        {tap === 1 && <Info3 />}
+        {tap === 2 && <Info2 />}
       </Container>
     </Layout>
   );

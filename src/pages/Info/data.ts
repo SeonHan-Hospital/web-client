@@ -4,12 +4,16 @@ export const AboutNavi = [
     id: 0,
   },
   {
-    label: "입퇴원안내",
+    label: "진료안내",
     id: 1,
   },
   {
-    label: "증명서발급",
+    label: "입퇴원안내",
     id: 2,
+  },
+  {
+    label: "증명서발급",
+    id: 3,
   },
 ];
 
@@ -52,6 +56,197 @@ export const HeaderMenus = [
   {
     label: "최고비용",
     row: 10,
+    col: 1,
+  },
+];
+
+export const Header3_1 = [
+  {
+    label: "진료과목",
+    row: 20,
+    col: 1,
+  },
+  {
+    label: "의사명",
+    row: 20,
+    col: 1,
+  },
+  {
+    label: "구분",
+    row: 15,
+    col: 1,
+  },
+  {
+    label: "월",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "화",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "수",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "목",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "금",
+    row: 9,
+    col: 1,
+  },
+];
+
+export const TableDatas3_1 = [
+  {
+    label: "가정의학과",
+    row: 20,
+    col: 2,
+  },
+  {
+    label: "고재홍",
+    row: 20,
+    col: 2,
+  },
+  {
+    label: "오전",
+    row: 15,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "오후",
+    row: 15,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "휴진",
+    row: 9,
+    col: 1,
+    color: "red",
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+];
+
+export const TableDatas3_2 = [
+  {
+    label: "재활의학과",
+    row: 20,
+    col: 2,
+  },
+  {
+    label: "이장복",
+    row: 20,
+    col: 2,
+  },
+  {
+    label: "오전",
+    row: 15,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "오후",
+    row: 15,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "휴진",
+    row: 9,
+    col: 1,
+    color: "red",
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
+    col: 1,
+  },
+  {
+    label: "○",
+    row: 9,
     col: 1,
   },
 ];
