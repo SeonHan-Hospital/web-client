@@ -20,7 +20,7 @@ export const HeaderModal = ({
 
   const handleNavi = useCallback(
     (path: string, tap: number) => {
-      if (path === "/이용안내") {
+      if (path === "/이용안내" || path === "/병원소개") {
         navigate(path, {
           state: {
             tap: tap,

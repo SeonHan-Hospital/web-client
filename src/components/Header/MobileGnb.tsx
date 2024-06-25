@@ -31,7 +31,7 @@ export const MobileGNB = ({ handleGNB }: IProps) => {
 
   const handleNavi = useCallback(
     (path: string, tap: number) => {
-      if (path === "/이용안내" && tap === 0) {
+      if (path === "/이용안내" || path === "/병원소개") {
         navigate(path, {
           state: {
             tap,
@@ -61,16 +61,14 @@ export const MobileGNB = ({ handleGNB }: IProps) => {
               <Drop
                 key={modalEl.label}
                 style={{
-                  backgroundColor:
-                    modalEl.label !== "비급여항목" ? "#DDDDDD" : "white",
-                  color: modalEl.label !== "비급여항목" ? "gray" : "black",
+                  backgroundColor: !modalEl.done ? "#DDDDDD" : "white",
+                  color: !modalEl.done ? "gray" : "black",
                 }}
                 onClick={() => handleNavi(modalEl.path, modalEl.tap)}
               >
                 <DropText
                   style={{
-                    textDecoration:
-                      modalEl.label !== "비급여항목" ? "line-through" : "none",
+                    textDecoration: !modalEl.done ? "line-through" : "none",
                   }}
                 >
                   {"- " + modalEl.label}

@@ -27,16 +27,19 @@ export const modalMenus = [
       label: "인사말",
       path: "/병원소개",
       tap: 0,
+      done: true,
     },
     {
       label: "시설안내",
       path: "/병원소개",
       tap: 1,
+      done: true,
     },
     {
       label: "오시는 길",
       path: "/병원소개",
       tap: 2,
+      done: true,
     },
   ],
   [
@@ -44,16 +47,19 @@ export const modalMenus = [
       label: "통증치료",
       path: "/일반재활센터",
       tap: 0,
+      done: false,
     },
     {
       label: "운동치료",
       path: "/일반재활센터",
       tap: 1,
+      done: false,
     },
     {
       label: "작업치료",
       path: "/일반재활센터",
       tap: 2,
+      done: false,
     },
   ],
   [
@@ -61,16 +67,19 @@ export const modalMenus = [
       label: "면역치료",
       path: "/암재활센터",
       tap: 0,
+      done: false,
     },
     {
       label: "도수치료",
       path: "/암재활센터",
       tap: 1,
+      done: false,
     },
     {
       label: "물리치료",
       path: "/암재활센터",
       tap: 2,
+      done: false,
     },
   ],
   [
@@ -78,21 +87,25 @@ export const modalMenus = [
       label: "비급여항목",
       path: "/이용안내",
       tap: 0,
+      done: true,
     },
     {
       label: "진료안내",
       path: "/이용안내",
       tap: 1,
+      done: true,
     },
     {
       label: "입퇴원안내",
       path: "/이용안내",
       tap: 2,
+      done: true,
     },
     {
       label: "증명서발급",
       path: "/이용안내",
       tap: 3,
+      done: true,
     },
   ],
   [
@@ -100,6 +113,7 @@ export const modalMenus = [
       label: "QnA",
       path: "/커뮤니티",
       tap: 0,
+      done: false,
     },
   ],
 ];
