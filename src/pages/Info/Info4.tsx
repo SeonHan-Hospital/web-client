@@ -19,6 +19,7 @@ export const Info4 = () => {
         <CircleText>비용 수납</CircleText>
         <CircleText>증명서 수령</CircleText>
       </CircleContainer>
+      <MobileImg src={`${IMGURL}info4_10.svg`} alt="info4_10" />
       <ButtonContainer>
         <Download>
           <div style={{ marginLeft: "20px" }}>의무기록사본 발급 동의서</div>
@@ -170,6 +171,11 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: 1000px) {
+    width: 90%;
+    margin-left: 5%;
+  }
 `;
 
 const Title = styled.div`
@@ -184,6 +190,16 @@ const Title = styled.div`
 
   @media only screen and (max-width: 500px) {
     font-size: 20px;
+  }
+`;
+
+const MobileImg = styled.img`
+  display: none;
+  width: 100%;
+  margin-bottom: 40px;
+
+  @media only screen and (max-width: 500px) {
+    display: block;
   }
 `;
 
@@ -211,6 +227,10 @@ const CircleContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const Circle = styled.div`
@@ -234,6 +254,10 @@ const Line = styled.div`
   position: relative;
   z-index: -1;
   top: -30px;
+
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const CircleText = styled.div`
@@ -282,10 +306,6 @@ const DownloadImg = styled.img`
 const TableContainer = styled.div`
   width: 100%;
   max-width: 1000px;
-
-  @media only screen and (max-width: 1000px) {
-    width: 90%;
-  }
 `;
 
 const TableHeader = styled.div`
