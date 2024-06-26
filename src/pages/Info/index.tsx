@@ -66,7 +66,6 @@ const NaviWrapper = styled.div`
 `;
 
 const NaviBox = styled.div`
-  width: 430px;
   height: 66px;
   display: flex;
   justify-content: center;
