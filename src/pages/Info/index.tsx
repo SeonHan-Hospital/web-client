@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Layout } from "../../components/Layout";
 import { AboutNavi } from "./data";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Info1 } from "./Info1";
 import { Info2 } from "./Info2";
 import { useLocation } from "react-router-dom";
@@ -17,6 +17,10 @@ export const Info = () => {
   const handleTap = useCallback((idx: number) => {
     setTap(idx);
   }, []);
+
+  useEffect(() => {
+    setTap(stateTap);
+  }, [stateTap]);
 
   return (
     <Layout>

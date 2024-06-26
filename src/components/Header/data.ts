@@ -8,8 +8,8 @@ export const menus = [
     path: "/일반재활센터",
   },
   {
-    label: "암재활센터",
-    path: "/암재활센터",
+    label: "암면역센터",
+    path: "/암면역센터",
   },
   {
     label: "이용안내",

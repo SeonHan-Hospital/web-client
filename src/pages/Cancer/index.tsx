@@ -1,13 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { Layout } from "../../components/Layout";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { AboutNavi } from "./data";
-import { Intro1 } from "./Intro1";
-import { Intro3 } from "./Intro3";
-import { Intro2 } from "./Intro2";
+import { Cancer1 } from "./Cancer1";
+import { Cancer2 } from "./Cancer2";
 
-export const Intro = () => {
+export const Cancer = () => {
   const IMGURL = process.env.REACT_APP_IMG_URL;
   const location = useLocation();
   const stateTap = location.state ? location.state.tap : 0;
@@ -23,7 +22,7 @@ export const Intro = () => {
 
   return (
     <Layout>
-      <Main src={`${IMGURL}IntroBackground.svg`} alt="background" />
+      <Main src={`${IMGURL}cancerBack.svg`} alt="background" />
       <Container>
         <NaviWrapper>
           <NaviBox>
@@ -38,9 +37,9 @@ export const Intro = () => {
             ))}
           </NaviBox>
         </NaviWrapper>
-        {tap === 0 && <Intro1 />}
-        {tap === 1 && <Intro2 />}
-        {tap === 2 && <Intro3 />}
+        {tap === 0 && <Cancer1 />}
+        {tap === 1 && <Cancer2 />}
+        {/* {tap === 2 && <Intro3 />} */}
       </Container>
     </Layout>
   );
