@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Layout } from "../../components/Layout";
-import background from "./background.svg";
 import { AboutNavi } from "./data";
 import { useCallback, useState } from "react";
 import { Info1 } from "./Info1";
@@ -10,6 +9,7 @@ import { Info3 } from "./Info3";
 import { Info4 } from "./Info4";
 
 export const Info = () => {
+  const IMGURL = process.env.REACT_APP_IMG_URL;
   const location = useLocation();
   const stateTap = location.state ? location.state.tap : 0;
   const [tap, setTap] = useState(stateTap);
@@ -20,7 +20,7 @@ export const Info = () => {
 
   return (
     <Layout>
-      <Main src={background} alt="background" />
+      <Main src={`${IMGURL}infoBackground.svg`} alt="background" />
       <Container>
         <NaviWrapper>
           <NaviBox>

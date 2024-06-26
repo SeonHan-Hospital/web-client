@@ -1,34 +1,35 @@
 import styled from "styled-components";
 import theme from "../../styles/theme";
-import intro3_1 from "./intro3_1.svg";
-import intro3_2 from "./intro3_2.svg";
-import intro3_3 from "./intro3_3.svg";
-import intro3_4 from "./intro3_4.svg";
-import intro3_5 from "./intro3_5.svg";
-import intro3_6 from "./intro3_6.svg";
-import intro3_7 from "./intro3_7.svg";
-import intro3_8 from "./intro3_8.svg";
 
 export const Intro2 = () => {
+  const IMGURL = process.env.REACT_APP_IMG_URL;
   return (
     <Container>
       <Title>시설 안내</Title>
       <SubTitle>면역치료센터</SubTitle>
       <ImgContainer>
-        <Img src={intro3_1} alt="intro" />
-        <Img src={intro3_2} alt="intro" />
-        <Img src={intro3_3} alt="intro" />
+        <Img src={`${IMGURL}intro3_1.svg`} alt="intro" />
+        <Img src={`${IMGURL}intro3_2.svg`} alt="intro" />
+        <Img src={`${IMGURL}intro3_3.svg`} alt="intro" />
       </ImgContainer>
       <SubTitle>재활치료센터</SubTitle>
       <ImgContainer>
-        <Img src={intro3_4} alt="intro" style={{ maxWidth: "600px" }} />
-        <Img src={intro3_5} alt="intro" style={{ maxWidth: "600px" }} />
+        <Img
+          src={`${IMGURL}intro3_4.svg`}
+          alt="intro"
+          style={{ maxWidth: "600px" }}
+        />
+        <Img
+          src={`${IMGURL}intro3_5.svg`}
+          alt="intro"
+          style={{ maxWidth: "600px" }}
+        />
       </ImgContainer>
       <SubTitle>면역병동</SubTitle>
       <ImgContainer>
-        <Img src={intro3_8} alt="intro" />
-        <Img src={intro3_7} alt="intro" />
-        <Img src={intro3_6} alt="intro" />
+        <Img src={`${IMGURL}intro3_8.svg`} alt="intro" />
+        <Img src={`${IMGURL}intro3_7.svg`} alt="intro" />
+        <Img src={`${IMGURL}intro3_6.svg`} alt="intro" />
       </ImgContainer>
     </Container>
   );

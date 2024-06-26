@@ -1,24 +1,24 @@
 import styled from "styled-components";
 import theme from "../../styles/theme";
-import dotImg from "./dotImg.svg";
 import { Table31 } from "./Table3_1";
 
 export const Info3 = () => {
+  const IMGURL = process.env.REACT_APP_IMG_URL;
   return (
     <Container>
       <Title>진료안내</Title>
       <SubTitle>진료일정안내</SubTitle>
       <Table>
         <TableTextWrapper>
-          <DotImg src={dotImg} />
+          <DotImg src={`${IMGURL}dotImg.svg`} />
           <div>진료시간 : 평일(월~금) 오전 08:30~오후 05:30</div>
         </TableTextWrapper>
         <TableTextWrapper>
-          <DotImg src={dotImg} />
+          <DotImg src={`${IMGURL}dotImg.svg`} />
           <div>점심시간 : 오후 12:30~오후 01:30</div>
         </TableTextWrapper>
         <TableTextWrapper>
-          <DotImg src={dotImg} />
+          <DotImg src={`${IMGURL}dotImg.svg`} />
           <div>토요일/일요일/공휴일 휴진</div>
         </TableTextWrapper>
       </Table>

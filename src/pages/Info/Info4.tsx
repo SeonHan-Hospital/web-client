@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import theme from "../../styles/theme";
-import download from "./download.svg";
 
 export const Info4 = () => {
+  const IMGURL = process.env.REACT_APP_IMG_URL;
   return (
     <Container>
       <Title>증명서발급</Title>
@@ -22,11 +22,11 @@ export const Info4 = () => {
       <ButtonContainer>
         <Download>
           <div style={{ marginLeft: "20px" }}>의무기록사본 발급 동의서</div>
-          <DownloadImg src={download} alt="download" />
+          <DownloadImg src={`${IMGURL}download.svg`} alt="download" />
         </Download>
         <Download>
           <div style={{ marginLeft: "20px" }}>의무기록사본 발급 위임장</div>
-          <DownloadImg src={download} alt="download" />
+          <DownloadImg src={`${IMGURL}download.svg`} alt="download" />
         </Download>
       </ButtonContainer>
       <SubTitle>환자 본인 또는 동의를 받을 수 있는 경우</SubTitle>

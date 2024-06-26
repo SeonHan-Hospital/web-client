@@ -1,42 +1,28 @@
 import styled from "styled-components";
 import { Layout } from "../../components/Layout";
-import MainIMG from "./MainIMG.svg";
-import MainBackground from "./MainBackground.svg";
-import Banner from "./Banner.svg";
 import theme, { response } from "../../styles/theme";
-import Map from "./Map.svg";
-import MobileMain from "./MobileMain.svg";
-import MobileMap from "./MobileMap.svg";
-import MobileBanner from "./MobileBanner.svg";
-import img1 from "./img1.svg";
-import img2 from "./img2.svg";
-import img3 from "./img3.svg";
-import img4 from "./img4.svg";
-import img5 from "./img5.svg";
-import img6 from "./img6.svg";
-import img7 from "./img7.svg";
-import img8 from "./img8.svg";
 import { Infos } from "./data";
 
 export const Home = () => {
+  const IMGURL = process.env.REACT_APP_IMG_URL;
   const style1 = `
     @media only screen and (min-width: 500px) {
       .mainimg {
-        background-image: url(${MainIMG});
+        background-image: url(${IMGURL}MainIMG.svg);
       }
       .mainback {
-        background-image: url(${MainBackground});
+        background-image: url(${IMGURL}MainBackground.svg);
       }
       .banner {
-        background-image: url(${Banner});
+        background-image: url(${IMGURL}Banner.svg);
       }
       .map {
-        background-image: url(${Map});
+        background-image: url(${IMGURL}Map.svg);
       }
     }
     @media only screen and (max-width: 768px) {
       .banner {
-        background-image: url(${MobileBanner});
+        background-image: url(${IMGURL}MobileBanner.svg);
       }
       .bannerText {
         display: none;
@@ -44,16 +30,16 @@ export const Home = () => {
     }
     @media only screen and (max-width: 500px) {
       .mainimg {
-        background-image: url(${MobileMain});
+        background-image: url(${IMGURL}MobileMain.svg);
       }
       .mainback {
         background-image: none;
       }
       .banner {
-        background-image: url(${MobileBanner});
+        background-image: url(${IMGURL}MobileBanner.svg);
       }
       .map {
-        background-image: url(${MobileMap});
+        background-image: url(${IMGURL}MobileMap.svg);
       }
       .bannerText {
         display: none;
@@ -78,7 +64,7 @@ export const Home = () => {
             <DetailTitle>재활치료센터</DetailTitle>
           </DetailTitleWrapper>
           <DetailContentsBox>
-            <Imgs src={img1} alt="신경계재활" />
+            <Imgs src={`${IMGURL}img1.svg`} alt="신경계재활" />
             <ContentsTitle>신경계재활</ContentsTitle>
             <ContentsText>
               보바스 치료, PNF, 중추 신경계발달치료 등 전문적인 교육과정을
@@ -87,7 +73,7 @@ export const Home = () => {
             </ContentsText>
           </DetailContentsBox>
           <DetailContentsBox>
-            <Imgs src={img2} alt="작업치료" />
+            <Imgs src={`${IMGURL}img2.svg`} alt="작업치료" />
             <ContentsTitle>작업치료</ContentsTitle>
             <ContentsText>
               질병이나 사고로 인해서 신체적, 정신적으로 손상을 받은 환자들에게
@@ -96,7 +82,7 @@ export const Home = () => {
             </ContentsText>
           </DetailContentsBox>
           <DetailContentsBox>
-            <Imgs src={img3} alt="통증치료" />
+            <Imgs src={`${IMGURL}img3.svg`} alt="통증치료" />
             <ContentsTitle>통증치료</ContentsTitle>
             <ContentsText>
               고통의 감소나 염증 및 근경련의 완화, 근 재교육 등으로 통증을
@@ -105,7 +91,7 @@ export const Home = () => {
             </ContentsText>
           </DetailContentsBox>
           <DetailContentsBox>
-            <Imgs src={img5} alt="도수치료" />
+            <Imgs src={`${IMGURL}img5.svg`} alt="도수치료" />
             <ContentsTitle>도수치료</ContentsTitle>
             <ContentsText>
               물리치료사가 1:1 맞춤 치료로 인체 구조와 기능적 이상상태를 바로
@@ -116,7 +102,7 @@ export const Home = () => {
             <DetailTitle>암면역센터</DetailTitle>
           </DetailTitleWrapper>
           <DetailContentsBox>
-            <Imgs src={img7} alt="온열치료" />
+            <Imgs src={`${IMGURL}img7.svg`} alt="온열치료" />
             <ContentsTitle>온열치료</ContentsTitle>
             <ContentsText>
               종양 조직에 고온의 열을 가하여 종양세포를 괴사시키게 하는
@@ -124,7 +110,7 @@ export const Home = () => {
             </ContentsText>
           </DetailContentsBox>
           <DetailContentsBox>
-            <Imgs src={img4} alt="면역치료" />
+            <Imgs src={`${IMGURL}img4.svg`} alt="면역치료" />
             <ContentsTitle>면역치료</ContentsTitle>
             <ContentsText>
               면역활성을 증가 시키고, 암의 전이 및 재발을 억제해 항암치료에
@@ -132,7 +118,7 @@ export const Home = () => {
             </ContentsText>
           </DetailContentsBox>
           <DetailContentsBox>
-            <Imgs src={img6} alt="페인닥터" />
+            <Imgs src={`${IMGURL}img6.svg`} alt="페인닥터" />
             <ContentsTitle>페인닥터</ContentsTitle>
             <ContentsText>
               신경자극 수용체에 전달된 신호가 통증 교란 신호로 작용하여 통증의
@@ -140,7 +126,7 @@ export const Home = () => {
             </ContentsText>
           </DetailContentsBox>
           <DetailContentsBox>
-            <Imgs src={img8} alt="림프도수치료" />
+            <Imgs src={`${IMGURL}img8.svg`} alt="림프도수치료" />
             <ContentsTitle>림프도수치료</ContentsTitle>
             <ContentsText>
               치료사의 손을 이용하여 림프의 이동을 촉진시켜 림프 순환으로 부종을

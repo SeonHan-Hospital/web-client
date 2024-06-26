@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import { response } from "../../styles/theme";
 import { Infos } from "../Home/data";
-import map from "../Home/Map.svg";
 
 export const Intro3 = () => {
   return (
     <Container>
       <InfoContainer>
-        <MapWrapper src={map} alt="map" />
+        <MapWrapper src={process.env.REACT_APP_IMG_URL + "Map.svg"} alt="map" />
         {Infos.map((el, index) => (
           <InfoWrapper
             size={el.row}

@@ -1,7 +1,7 @@
-import adress from "./adress.svg";
-import call from "./call.svg";
-import email from "./email.svg";
-import time from "./time.svg";
+const adress = "https://sunhanimgs.s3.ap-northeast-2.amazonaws.com/adress.svg";
+const call = "https://sunhanimgs.s3.ap-northeast-2.amazonaws.com/call.svg";
+const email = "https://sunhanimgs.s3.ap-northeast-2.amazonaws.com/email.svg";
+const time = "https://sunhanimgs.s3.ap-northeast-2.amazonaws.com/time.svg";
 
 export const Infos = [
   {

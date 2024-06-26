@@ -2,13 +2,13 @@ import { useCallback, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Layout } from "../../components/Layout";
 import styled from "styled-components";
-import background from "./background.svg";
 import { AboutNavi } from "./data";
 import { Intro1 } from "./Intro1";
 import { Intro3 } from "./Intro3";
 import { Intro2 } from "./Intro2";
 
 export const Intro = () => {
+  const IMGURL = process.env.REACT_APP_IMG_URL;
   const location = useLocation();
   const stateTap = location.state ? location.state.tap : 0;
   const [tap, setTap] = useState(stateTap);
@@ -19,8 +19,7 @@ export const Intro = () => {
 
   return (
     <Layout>
-      {/* <MainImg style={{ backgroundImage: `url(${background})` }} /> */}
-      <Main src={background} alt="background" />
+      <Main src={`${IMGURL}IntroBackground.svg`} alt="background" />
       <Container>
         <NaviWrapper>
           <NaviBox>
