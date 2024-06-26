@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { AboutNavi } from "./data";
 import { Cancer1 } from "./Cancer1";
 import { Cancer2 } from "./Cancer2";
+import { Cancer3 } from "./Cancer3";
 
 export const Cancer = () => {
   const IMGURL = process.env.REACT_APP_IMG_URL;
@@ -39,7 +40,7 @@ export const Cancer = () => {
         </NaviWrapper>
         {tap === 0 && <Cancer1 />}
         {tap === 1 && <Cancer2 />}
-        {/* {tap === 2 && <Intro3 />} */}
+        {tap === 2 && <Cancer3 />}
       </Container>
     </Layout>
   );

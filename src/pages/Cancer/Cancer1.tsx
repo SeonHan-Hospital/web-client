@@ -7,7 +7,7 @@ export const Cancer1 = () => {
     <Container>
       <Title>셀레늄</Title>
       <Subtitle>{`면역활성을 증가시키고 NK 세포의 활성화 증가,\n암의 전이 및 재발을 억제해 치료에 도움이 됩니다. `}</Subtitle>
-      <TextImgContainer>
+      <TextImgContainerReverse>
         <ContentsContainer>
           <ContentsTitle>셀레늄 효과</ContentsTitle>
           <TextContents>
@@ -16,7 +16,7 @@ export const Cancer1 = () => {
           </TextContents>
         </ContentsContainer>
         <BigImg src={`${IMGURL}cancer1_1.svg`} alt="1_1" />
-      </TextImgContainer>
+      </TextImgContainerReverse>
       <ImgContainer>
         <SmallImg src={`${IMGURL}cancer1_2.svg`} alt="img" />
         <SmallImg src={`${IMGURL}cancer1_3.svg`} alt="img" />
@@ -52,7 +52,7 @@ export const Cancer1 = () => {
       <BorderLine />
       <Title>이뮤노시아닌 (이뮤코텔)</Title>
       <Subtitle>{`무독성의 자연 친화적인 안전한 면역 항암제 구멍 삿갓조개의 혈액내에 있는\n산소운반 단백질인 헤모시아닌을 분리, 정제한 활성 성분`}</Subtitle>
-      <TextImgContainer>
+      <TextImgContainerReverse>
         <ContentsContainer>
           <ContentsTitle>이뮤노시아닌의 효과</ContentsTitle>
           <TextContents>
@@ -62,8 +62,12 @@ export const Cancer1 = () => {
             예방합니다.
           </TextContents>
         </ContentsContainer>
-        <BigImg src={`${IMGURL}cancer1_13.svg`} alt="1_1" />
-      </TextImgContainer>
+        <BigImg
+          src={`${IMGURL}cancer1_13.svg`}
+          alt="1_1"
+          style={{ marginRight: "20px" }}
+        />
+      </TextImgContainerReverse>
       <ImgContainer>
         <SmallImg src={`${IMGURL}cancer1_14.svg`} alt="img" />
         <SmallImg src={`${IMGURL}cancer1_15.svg`} alt="img" />
@@ -98,7 +102,7 @@ export const Cancer1 = () => {
       <BorderLine />
       <Title>비타민 C</Title>
       <Subtitle>{`우리몸에 필수적인 비타민 C를 주입하는 방법으로\n몸의 항암으로 인한 통증과 부작용 감소에 도움이 됩니다.`}</Subtitle>
-      <TextImgContainer>
+      <TextImgContainerReverse>
         <ContentsContainer>
           <ContentsTitle>비타민 C 효과</ContentsTitle>
           <TextContents>
@@ -108,7 +112,7 @@ export const Cancer1 = () => {
           </TextContents>
         </ContentsContainer>
         <BigImg src={`${IMGURL}cancer1_25.svg`} alt="1_1" />
-      </TextImgContainer>
+      </TextImgContainerReverse>
       <ImgContainer>
         <SmallImg src={`${IMGURL}cancer1_26.svg`} alt="img" />
         <SmallImg src={`${IMGURL}cancer1_27.svg`} alt="img" />
@@ -144,7 +148,7 @@ export const Cancer1 = () => {
       <BorderLine />
       <Title>글루타치온</Title>
       <Subtitle>{`강력 항산화 효소로 체내의 독소를 배출되기 쉬운 형태로\n전환시켜 해독작용을 나타내고, 간기능을 강화 시킵니다.`}</Subtitle>
-      <TextImgContainer>
+      <TextImgContainerReverse>
         <ContentsContainer>
           <ContentsTitle>글루타치온 효과</ContentsTitle>
           <TextContents>
@@ -153,7 +157,7 @@ export const Cancer1 = () => {
           </TextContents>
         </ContentsContainer>
         <BigImg src={`${IMGURL}cancer1_37.svg`} alt="1_1" />
-      </TextImgContainer>
+      </TextImgContainerReverse>
       <ImgContainer>
         <SmallImg src={`${IMGURL}cancer1_38.svg`} alt="img" />
         <SmallImg src={`${IMGURL}cancer1_39.svg`} alt="img" />
@@ -227,6 +231,18 @@ const Subtitle = styled.div`
 `;
 
 const TextImgContainer = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 1110px;
+  justify-content: space-between;
+  margin-bottom: 80px;
+
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+  }
+`;
+
+const TextImgContainerReverse = styled.div`
   display: flex;
   width: 100%;
   max-width: 1110px;
