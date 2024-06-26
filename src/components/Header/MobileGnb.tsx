@@ -31,7 +31,11 @@ export const MobileGNB = ({ handleGNB }: IProps) => {
 
   const handleNavi = useCallback(
     (path: string, tap: number) => {
-      if (path === "/이용안내" || path === "/병원소개") {
+      if (
+        path === "/이용안내" ||
+        path === "/병원소개" ||
+        path === "/암면역센터"
+      ) {
         navigate(path, {
           state: {
             tap,

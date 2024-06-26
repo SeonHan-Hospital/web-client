@@ -64,22 +64,22 @@ export const modalMenus = [
   ],
   [
     {
-      label: "면역치료",
-      path: "/암재활센터",
+      label: "면역주사",
+      path: "/암면역센터",
       tap: 0,
-      done: false,
+      done: true,
     },
     {
-      label: "도수치료",
-      path: "/암재활센터",
+      label: "암성통증치료",
+      path: "/암면역센터",
       tap: 1,
-      done: false,
+      done: true,
     },
     {
-      label: "물리치료",
-      path: "/암재활센터",
+      label: "온열치료",
+      path: "/암면역센터",
       tap: 2,
-      done: false,
+      done: true,
     },
   ],
   [
