@@ -159,8 +159,6 @@ const ImgContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   margin-bottom: 80px;
-
-  /* @media only screen and (max-width: ) */
 `;
 
 const ImgDetail = styled.div`
