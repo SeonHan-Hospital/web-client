@@ -4,8 +4,8 @@ export const menus = [
     path: "/병원소개",
   },
   {
-    label: "일반재활센터",
-    path: "/일반재활센터",
+    label: "재활치료센터",
+    path: "/재활치료센터",
   },
   {
     label: "암면역센터",
@@ -44,21 +44,27 @@ export const modalMenus = [
   ],
   [
     {
-      label: "통증치료",
-      path: "/일반재활센터",
+      label: "신경계재활",
+      path: "/재활치료센터",
       tap: 0,
       done: false,
     },
     {
-      label: "운동치료",
-      path: "/일반재활센터",
+      label: "작업치료",
+      path: "/재활치료센터",
       tap: 1,
       done: false,
     },
     {
-      label: "작업치료",
-      path: "/일반재활센터",
+      label: "통증치료",
+      path: "/재활치료센터",
       tap: 2,
+      done: false,
+    },
+    {
+      label: "면역치료",
+      path: "/재활치료센터",
+      tap: 3,
       done: false,
     },
   ],

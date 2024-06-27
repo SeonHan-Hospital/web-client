@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import { Info } from "./pages/Info";
 import { Intro } from "./pages/Intro";
 import { Cancer } from "./pages/Cancer";
+import { Care } from "./pages/Care";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/병원소개" element={<Intro />} />
         <Route path="/이용안내" element={<Info />} />
         <Route path="/암면역센터" element={<Cancer />} />
+        <Route path="재활치료센터" element={<Care />} />
       </Routes>
     </BrowserRouter>
   );
