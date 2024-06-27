@@ -28,11 +28,7 @@ export const Cancer1 = () => {
       <Title>싸이모신알파원</Title>
       <Subtitle>{`면역인자를 투여하여 인체가 자연적으로 가지고 있는\n면역능력을 회복하고 증가시켜 항암효과를 얻도록 돕는 치료방법입니다.`}</Subtitle>
       <TextImgContainer>
-        <BigImg
-          src={`${IMGURL}cancer1_7.svg`}
-          alt="1_1"
-          style={{ marginRight: "20px" }}
-        />
+        <BigImg src={`${IMGURL}cancer1_7.svg`} alt="1_1" />
         <ContentsContainer>
           <ContentsTitle>싸이모신알파원 효과</ContentsTitle>
           <TextContents>
@@ -62,11 +58,7 @@ export const Cancer1 = () => {
             예방합니다.
           </TextContents>
         </ContentsContainer>
-        <BigImg
-          src={`${IMGURL}cancer1_13.svg`}
-          alt="1_1"
-          style={{ marginRight: "20px" }}
-        />
+        <BigImg src={`${IMGURL}cancer1_13.svg`} alt="1_1" />
       </TextImgContainerReverse>
       <ImgContainer>
         <SmallImg src={`${IMGURL}cancer1_14.svg`} alt="img" />
@@ -79,11 +71,7 @@ export const Cancer1 = () => {
       <Title>미슬토</Title>
       <Subtitle>{`항암효과가 입증된 여러 종류의 숙주나무에 기생하는\n식물의 추출물인 미슬토는 면역 조절과 암세포 성장을 억제합니다.`}</Subtitle>
       <TextImgContainer>
-        <BigImg
-          src={`${IMGURL}cancer1_19.svg`}
-          alt="1_1"
-          style={{ marginRight: "20px" }}
-        />
+        <BigImg src={`${IMGURL}cancer1_19.svg`} alt="1_1" />
         <ContentsContainer>
           <ContentsTitle>미슬토의 효과</ContentsTitle>
           <TextContents>
@@ -124,11 +112,7 @@ export const Cancer1 = () => {
       <Title>리포익산</Title>
       <Subtitle>{`비타민C의 400배로 강한 항산화 작용으로\n활성산소를 줄이고 면역력을 높여 항암치료에 도움이 됩니다.`}</Subtitle>
       <TextImgContainer>
-        <BigImg
-          src={`${IMGURL}cancer1_31.svg`}
-          alt="1_1"
-          style={{ marginRight: "20px" }}
-        />
+        <BigImg src={`${IMGURL}cancer1_31.svg`} alt="1_1" />
         <ContentsContainer>
           <ContentsTitle>리포익산 효과</ContentsTitle>
           <TextContents>
@@ -169,11 +153,7 @@ export const Cancer1 = () => {
       <Title>비타민 D</Title>
       <Subtitle>{`오랜 투병생활과 통증으로 인한 활동 감소로\n비타민 D 부족이 생기게 되는 것을 보충하여 암 증식 및 전이에 효과적입니다.`}</Subtitle>
       <TextImgContainer>
-        <BigImg
-          src={`${IMGURL}cancer1_43.svg`}
-          alt="1_1"
-          style={{ marginRight: "20px" }}
-        />
+        <BigImg src={`${IMGURL}cancer1_43.svg`} alt="1_1" />
         <ContentsContainer>
           <ContentsTitle>비타민 D 효과</ContentsTitle>
           <TextContents>
@@ -275,9 +255,12 @@ const MobileSmallImg = styled.img`
 const ContentsContainer = styled.div`
   width: 100%;
   max-width: 540px;
+  padding: 20px;
+
   @media only screen and (max-width: 500px) {
     width: 100%;
     margin-bottom: 40px;
+    padding: 0;
   }
 `;
 

@@ -13,11 +13,7 @@ export const Care2 = () => {
         style={{ maxWidth: "500px", fontSize: "16px" }}
       >{`뇌졸중, 외상성 뇌손상, 뇌,종양 등의 병변으로 인해 중추신경이 손상된 경우, 인지장애, 연하곤란 장애`}</Subtitle>
       <TextImgContainerReverse>
-        <BigImg
-          src={`${IMGURL}care2_1.svg`}
-          alt="img"
-          style={{ marginRight: "20px" }}
-        />
+        <BigImg src={`${IMGURL}care2_1.svg`} alt="img" />
         <ContentsContainer>
           <ContentsTitle>특수·복합 작업치료</ContentsTitle>
           <TextContents>
@@ -49,18 +45,10 @@ export const Care2 = () => {
             있도록 치료프로그램을 구성하고 있습니다.
           </TextContents>
         </ContentsContainer>
-        <BigImg
-          src={`${IMGURL}care2_2.svg`}
-          alt="img"
-          style={{ marginLeft: "20px" }}
-        />
+        <BigImg src={`${IMGURL}care2_2.svg`} alt="img" />
       </TextImgContainer>
       <TextImgContainerReverse>
-        <BigImg
-          src={`${IMGURL}care2_3.svg`}
-          alt="img"
-          style={{ marginRight: "20px" }}
-        />
+        <BigImg src={`${IMGURL}care2_3.svg`} alt="img" />
         <ContentsContainer>
           <ContentsTitle>연하장애재활치료</ContentsTitle>
           <TextContents>
@@ -85,18 +73,10 @@ export const Care2 = () => {
             이후에는 인정하지 아니합니다.
           </TextContents>
         </ContentsContainer>
-        <BigImg
-          src={`${IMGURL}care2_4.svg`}
-          alt="img"
-          style={{ marginLeft: "20px" }}
-        />
+        <BigImg src={`${IMGURL}care2_4.svg`} alt="img" />
       </TextImgContainer>
       <TextImgContainerReverse>
-        <BigImg
-          src={`${IMGURL}care2_5.svg`}
-          alt="img"
-          style={{ marginRight: "20px" }}
-        />
+        <BigImg src={`${IMGURL}care2_5.svg`} alt="img" />
         <ContentsContainer>
           <ContentsTitle>전산화 인지재활치료</ContentsTitle>
           <TextContents>
@@ -184,9 +164,12 @@ const BigImg = styled.img`
 const ContentsContainer = styled.div`
   width: 100%;
   max-width: 540px;
+  padding: 20px;
+
   @media only screen and (max-width: 500px) {
     width: 100%;
     margin-bottom: 40px;
+    padding: 0;
   }
 `;
 

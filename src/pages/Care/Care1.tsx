@@ -13,11 +13,7 @@ export const Care1 = () => {
         style={{ maxWidth: "500px", fontSize: "16px" }}
       >{`신경계 손상환자, 외상성 신경손상, 디스크, 스트레스성 신경마비, 수핵 탈출증, 척추 전방 전위증, 오십견, 거북목, 어깨결림 급성 / 만성 관절염, 근육통, 염좌 및 골절환자, 퇴행성 관절염 / 암 통증`}</Subtitle>
       <TextImgContainerReverse>
-        <BigImg
-          src={`${IMGURL}care1_1.svg`}
-          alt="img"
-          style={{ marginRight: "20px" }}
-        />
+        <BigImg src={`${IMGURL}care1_1.svg`} alt="img" />
         <ContentsContainer>
           <ContentsTitle>중추신경계 발달치료</ContentsTitle>
           <TextContents>
@@ -46,18 +42,10 @@ export const Care1 = () => {
             개선해 나갑니다.
           </TextContents>
         </ContentsContainer>
-        <BigImg
-          src={`${IMGURL}care1_2.svg`}
-          alt="img"
-          style={{ marginLeft: "20px" }}
-        />
+        <BigImg src={`${IMGURL}care1_2.svg`} alt="img" />
       </TextImgContainer>
       <TextImgContainerReverse>
-        <BigImg
-          src={`${IMGURL}care1_3.svg`}
-          alt="img"
-          style={{ marginRight: "20px" }}
-        />
+        <BigImg src={`${IMGURL}care1_3.svg`} alt="img" />
         <ContentsContainer>
           <ContentsTitle>매트 및 이동훈련(Mat Program)</ContentsTitle>
           <TextContents>
@@ -79,11 +67,7 @@ export const Care1 = () => {
             보행이 가능하도록 치료합니다.
           </TextContents>
         </ContentsContainer>
-        <BigImg
-          src={`${IMGURL}care1_4.svg`}
-          alt="img"
-          style={{ marginLeft: "20px" }}
-        />
+        <BigImg src={`${IMGURL}care1_4.svg`} alt="img" />
       </TextImgContainer>
     </Container>
   );
@@ -162,9 +146,12 @@ const BigImg = styled.img`
 const ContentsContainer = styled.div`
   width: 100%;
   max-width: 540px;
+  padding: 20px;
+
   @media only screen and (max-width: 500px) {
     width: 100%;
     margin-bottom: 40px;
+    padding: 0;
   }
 `;
 
