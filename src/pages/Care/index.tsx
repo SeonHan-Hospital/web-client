@@ -60,18 +60,20 @@ const NaviWrapper = styled.div`
   height: 80px;
   border-bottom: 1px solid #eeeeee;
   overflow-x: auto;
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 600px) {
     width: 100vw;
   }
 `;
 
 const NaviBox = styled.div`
-  width: 430px;
   height: 66px;
   display: flex;
   justify-content: center;
   margin: 7px auto;
   align-items: center;
+  @media only screen and (max-width: 600px) {
+    justify-content: flex-start;
+  }
 `;
 
 const Navi = styled.div<{ spotlight: boolean }>`
