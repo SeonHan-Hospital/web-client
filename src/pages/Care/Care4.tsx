@@ -8,7 +8,7 @@ export const Care4 = () => {
       <Title>면역치료</Title>
       <Subtitle
         style={{ maxWidth: "500px", fontSize: "16px" }}
-      >{`뇌졸중, 외상성 뇌손상, 뇌,종양 등의 병변으로 인해 중추신경이 손상된 경우, 인지장애, 연하곤란 장애`}</Subtitle>
+      >{`면역세포를 활성화하여 종양세포의 자연사멸을 유도하고 전이와 재발을 방지하며 정상세포의 재생을 활성화시켜 항암, 방사선 치료율을 높이고 부작용을 감소시킵니다.`}</Subtitle>
       <TextImgContainer>
         <ContentsContainer>
           <ContentsTitle>고주파 온열암 치료</ContentsTitle>

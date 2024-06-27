@@ -11,7 +11,7 @@ export const Care1 = () => {
       </Subtitle>
       <Subtitle
         style={{ maxWidth: "500px", fontSize: "16px" }}
-      >{`신경계 손상환자, 외상성 신경손상, 디스크, 스트레스성 신경마비, 수핵 탈출증, 척추 전방 전위증, 오십견, 거북목, 어깨결림 급성 / 만성 관절염, 근육통, 염좌 및 골절환자, 퇴행성 관절염 / 암 통증`}</Subtitle>
+      >{`뇌졸중, 외상성 뇌손상, 척수 손상, 파킨슨 병, 류마티스 관절염, 근골격계 장애/암질환/골절/수술 등으로 인한 이동 보행 및 일상생활 동작에 제한이 있는 경우`}</Subtitle>
       <TextImgContainerReverse>
         <BigImg src={`${IMGURL}care1_1.svg`} alt="img" />
         <ContentsContainer>
