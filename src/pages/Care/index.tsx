@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { AboutNavi } from "./data";
 import { Care1 } from "./Care1";
+import { Care2 } from "./Care2";
 
 export const Care = () => {
   const IMGURL = process.env.REACT_APP_IMG_URL;
@@ -37,7 +38,7 @@ export const Care = () => {
           </NaviBox>
         </NaviWrapper>
         {tap === 0 && <Care1 />}
-        {/* {tap === 1 && <Intro2 />} */}
+        {tap === 1 && <Care2 />}
         {/* {tap === 2 && <Intro3 />} */}
       </Container>
     </Layout>
