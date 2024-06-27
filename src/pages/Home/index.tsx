@@ -82,7 +82,7 @@ export const Home = () => {
             </ContentsText>
           </DetailContentsBox>
           <DetailContentsBox>
-            <Imgs src={`${IMGURL}img3.svg`} alt="통증치료" />
+            <Imgs src={`${IMGURL}img3_1.svg`} alt="통증치료" />
             <ContentsTitle>통증치료</ContentsTitle>
             <ContentsText>
               고통의 감소나 염증 및 근경련의 완화, 근 재교육 등으로 통증을
