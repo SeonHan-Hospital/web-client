@@ -1,8 +1,54 @@
 import styled from "styled-components";
 import theme from "../../styles/theme";
+import { useGetAgreeFile, useGetWarrant } from "../../hooks/api";
+import { useCallback, useEffect } from "react";
 
 export const Info4 = () => {
   const IMGURL = process.env.REACT_APP_IMG_URL;
+  const [agreeReq, agreeRes] = useGetAgreeFile();
+  const [warrantReq, warrantRes] = useGetWarrant();
+
+  const handleDownload = useCallback(
+    (idx: number) => {
+      if (idx === 0) {
+        agreeReq();
+      } else {
+        warrantReq();
+      }
+    },
+    [agreeReq, warrantReq]
+  );
+
+  useEffect(() => {
+    if (agreeRes.data && agreeRes.called) {
+      const url = window.URL.createObjectURL(new Blob([agreeRes.data]));
+      const a = document.createElement("a");
+      a.href = url;
+      a.setAttribute("download", "의무기록사본 발급 동의서.hwp");
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+    } else if (agreeRes.error && agreeRes.called) {
+      alert("다운로드에 실패했습니다.");
+    }
+  }, [agreeRes]);
+
+  useEffect(() => {
+    if (warrantRes.data && warrantRes.called) {
+      const url = window.URL.createObjectURL(new Blob([warrantRes.data]));
+      const a = document.createElement("a");
+      a.href = url;
+      a.setAttribute("download", "의무기록사본 발급 위임장.hwp");
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+    } else if (warrantRes.called && warrantRes.error) {
+      alert("다운로드에 실패했습니다.");
+    }
+  }, [warrantRes]);
+
   return (
     <Container>
       <Title>증명서발급</Title>
@@ -23,11 +69,19 @@ export const Info4 = () => {
       <ButtonContainer>
         <Download>
           <div style={{ marginLeft: "20px" }}>의무기록사본 발급 동의서</div>
-          <DownloadImg src={`${IMGURL}download.svg`} alt="download" />
+          <DownloadImg
+            src={`${IMGURL}download.svg`}
+            alt="download"
+            onClick={() => handleDownload(0)}
+          />
         </Download>
         <Download>
           <div style={{ marginLeft: "20px" }}>의무기록사본 발급 위임장</div>
-          <DownloadImg src={`${IMGURL}download.svg`} alt="download" />
+          <DownloadImg
+            src={`${IMGURL}download.svg`}
+            alt="download"
+            onClick={() => handleDownload(1)}
+          />
         </Download>
       </ButtonContainer>
       <SubTitle>환자 본인 또는 동의를 받을 수 있는 경우</SubTitle>

@@ -6,7 +6,7 @@ import { AboutNavi } from "./data";
 import { Care1 } from "./Care1";
 import { Care2 } from "./Care2";
 import { Care3 } from "./Care3";
-import { Care4 } from "./Care4";
+// import { Care4 } from "./Care4";
 
 export const Care = () => {
   const IMGURL = process.env.REACT_APP_IMG_URL;
@@ -42,7 +42,7 @@ export const Care = () => {
         {tap === 0 && <Care1 />}
         {tap === 1 && <Care2 />}
         {tap === 2 && <Care3 />}
-        {tap === 3 && <Care4 />}
+        {/* {tap === 3 && <Care4 />} */}
       </Container>
     </Layout>
   );

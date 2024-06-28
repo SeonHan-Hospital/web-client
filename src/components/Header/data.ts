@@ -61,12 +61,12 @@ export const modalMenus = [
       tap: 2,
       done: true,
     },
-    {
-      label: "면역치료",
-      path: "/재활치료센터",
-      tap: 3,
-      done: true,
-    },
+    // {
+    //   label: "면역치료",
+    //   path: "/재활치료센터",
+    //   tap: 3,
+    //   done: true,
+    // },
   ],
   [
     {

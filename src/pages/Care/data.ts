@@ -11,8 +11,8 @@ export const AboutNavi = [
     label: "통증치료",
     id: 2,
   },
-  {
-    label: "면역치료",
-    id: 3,
-  },
+  // {
+  //   label: "면역치료",
+  //   id: 3,
+  // },
 ];
