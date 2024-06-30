@@ -1,7 +1,6 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { emptyAlert } from "../../utils/functinos";
 
 interface IProps {
   menus: any[];
@@ -20,20 +19,11 @@ export const HeaderModal = ({
 
   const handleNavi = useCallback(
     (path: string, tap: number) => {
-      if (
-        path === "/이용안내" ||
-        path === "/병원소개" ||
-        path === "/암면역센터" ||
-        path === "/재활치료센터"
-      ) {
-        navigate(path, {
-          state: {
-            tap: tap,
-          },
-        });
-      } else {
-        emptyAlert();
-      }
+      navigate(path, {
+        state: {
+          tap: tap,
+        },
+      });
     },
     [navigate]
   );

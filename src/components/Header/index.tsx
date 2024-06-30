@@ -10,7 +10,6 @@ import MobileIcon from "./MobileIcon.svg";
 import { MobileGNB } from "./MobileGnb";
 import close from "./close.svg";
 import { useNavigate } from "react-router-dom";
-import { emptyAlert } from "../../utils/functinos";
 
 export const Header = () => {
   const [menuLefts, setMenuLefts] = useState<(number | undefined)[]>([]);
@@ -79,16 +78,7 @@ export const Header = () => {
 
   const handleNavigate = useCallback(
     (path: string) => {
-      if (
-        path === "/이용안내" ||
-        path === "/병원소개" ||
-        path === "/암면역센터" ||
-        path === "/재활치료센터"
-      )
-        navigate(path);
-      else {
-        emptyAlert();
-      }
+      navigate(path);
     },
     [navigate]
   );
