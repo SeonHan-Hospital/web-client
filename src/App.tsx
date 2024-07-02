@@ -5,6 +5,7 @@ import { Intro } from "./pages/Intro";
 import { Cancer } from "./pages/Cancer";
 import { Care } from "./pages/Care";
 import { Community } from "./pages/Community";
+import { Create } from "./pages/Create";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/암면역센터" element={<Cancer />} />
         <Route path="재활치료센터" element={<Care />} />
         <Route path="커뮤니티" element={<Community />} />
+        <Route path="글쓰기" element={<Create />} />
       </Routes>
     </BrowserRouter>
   );

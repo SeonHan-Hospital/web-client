@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useAxios } from "./axios";
-import { IGetQuestionParams } from ".";
+import { ICreateQuestion, IGetQuestionParams } from ".";
 
 export const useGetAgreeFile = () => {
   const [request, response] = useAxios();
@@ -35,6 +35,23 @@ export const useGetQuestionList = () => {
     (params: IGetQuestionParams) => {
       return request({
         url: `/question?page=${params.page}&limit=${params.limit}&author=${params.author}&content=${params.content}&subject=${params.subject}`,
+      });
+    },
+    [request]
+  );
+
+  return [run, response] as [typeof run, typeof response];
+};
+
+export const useCreateQuestion = () => {
+  const [request, response] = useAxios();
+
+  const run = useCallback(
+    (data: ICreateQuestion) => {
+      return request({
+        url: "/question",
+        method: "POST",
+        data: data,
       });
     },
     [request]

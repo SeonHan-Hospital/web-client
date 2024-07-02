@@ -48,6 +48,9 @@ const HeaderContainer = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 14px;
+    @media only screen and (max-width: 500px) {
+      display: none;
+    }
   }
 `;
 
@@ -57,6 +60,8 @@ interface IProps {
 
 export const CommuTable = ({ datas }: IProps) => {
   const handleAnswer = useCallback((data: IQuestion) => {
+    const sub = data.subject.substring(0, 15) + "...";
+    data.subject = data.subject.length < 20 ? data.subject : sub;
     if (data.answerId.length > 0) {
       return `${data.subject}\n(답변완료)`;
     } else {
@@ -97,6 +102,8 @@ const Cell = styled.div`
   }
   :nth-child(2) {
     flex: 2;
+    max-width: 400px;
+    overflow: hidden;
     display: flex;
     font-size: 14px;
     align-items: center;
@@ -115,5 +122,8 @@ const Cell = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 14px;
+    @media only screen and (max-width: 500px) {
+      display: none;
+    }
   }
 `;

@@ -5,6 +5,7 @@ import { CommuTable } from "./CommuTable";
 import { useCallback, useEffect, useState } from "react";
 import { useGetQuestionList } from "../../hooks/api";
 import { Pagination } from "./Pagination";
+import { useNavigate } from "react-router-dom";
 
 export interface IQuestion {
   id: number;
@@ -24,6 +25,14 @@ export const Community = () => {
   const [getQuestionReq, getQuestionRes] = useGetQuestionList();
   const [totalElement, setTotalElement] = useState(0);
   const [page, setPage] = useState(0);
+  const navigate = useNavigate();
+
+  const handleNavigate = useCallback(
+    (path: string) => {
+      navigate(path);
+    },
+    [navigate]
+  );
 
   const handlePage = useCallback((page: number) => {
     setPage(page);
@@ -61,12 +70,12 @@ export const Community = () => {
         <SemiContainer>
           <Title>고객서비스</Title>
           <SubTitle>
-            환자 또는 보호자분의 전화번호를 남기시면, 상담원이 친절하게 예약을
-            도와드리겠습니다.
+            궁금하신 점 남겨주시면 친절하게 답변 도와드리겠습니다. 입원 및
+            예약은 전화 상담 부탁드립니다.
           </SubTitle>
           <TableContainer>
             <AlignWrapper>
-              <Button>글쓰기</Button>
+              <Button onClick={() => handleNavigate("/글쓰기")}>글쓰기</Button>
             </AlignWrapper>
             <CommuTable datas={tableDatas} />
             <Pagination
