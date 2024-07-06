@@ -19,8 +19,12 @@ export const Infos = [
   },
   {
     label: ["Tel", "E-mail"],
-    content: ["sunhan0054@naver.com", "전화 064-722-0054 / 팩스 064-722-0064"],
+    content: [
+      "sunhan0054@naver.com",
+      "전화 064-722-0054 / 팩스 064-722-0064",
+      "24시 상담 010-3964-0054",
+    ],
     icon: [call, email],
-    row: 2,
+    row: 3,
   },
 ];

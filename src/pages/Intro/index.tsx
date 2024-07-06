@@ -6,6 +6,7 @@ import { AboutNavi } from "./data";
 import { Intro1 } from "./Intro1";
 import { Intro3 } from "./Intro3";
 import { Intro2 } from "./Intro2";
+import { Intro4 } from "./Intro4";
 
 export const Intro = () => {
   const IMGURL = process.env.REACT_APP_IMG_URL;
@@ -40,7 +41,8 @@ export const Intro = () => {
         </NaviWrapper>
         {tap === 0 && <Intro1 />}
         {tap === 1 && <Intro2 />}
-        {tap === 2 && <Intro3 />}
+        {tap === 2 && <Intro4 />}
+        {tap === 3 && <Intro3 />}
       </Container>
     </Layout>
   );
@@ -62,18 +64,20 @@ const NaviWrapper = styled.div`
   height: 80px;
   border-bottom: 1px solid #eeeeee;
   overflow-x: auto;
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 600px) {
     width: 100vw;
   }
 `;
 
 const NaviBox = styled.div`
-  width: 430px;
   height: 66px;
   display: flex;
   justify-content: center;
   margin: 7px auto;
   align-items: center;
+  @media only screen and (max-width: 600px) {
+    justify-content: flex-start;
+  }
 `;
 
 const Navi = styled.div<{ spotlight: boolean }>`

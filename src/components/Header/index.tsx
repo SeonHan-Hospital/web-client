@@ -139,14 +139,14 @@ export const Header = () => {
                 ))}
               </GnbContainer>
               <CallWrapper>
-                <Call href="tel:064-722-0054">
+                <Call href="tel:010-3964-0054">
                   <img
                     src={callIcon}
                     alt="icon"
                     width={28}
                     style={{ marginRight: "10px" }}
                   />
-                  {isDesktop && "064-722-0054"}
+                  {isDesktop && "010-3964-0054"}
                 </Call>
               </CallWrapper>
             </Wrapper>

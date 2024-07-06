@@ -36,9 +36,15 @@ export const modalMenus = [
       done: true,
     },
     {
-      label: "오시는 길",
+      label: "프로그램",
       path: "/병원소개",
       tap: 2,
+      done: true,
+    },
+    {
+      label: "오시는 길",
+      path: "/병원소개",
+      tap: 3,
       done: true,
     },
   ],

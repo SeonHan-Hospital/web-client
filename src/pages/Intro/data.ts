@@ -8,7 +8,11 @@ export const AboutNavi = [
     id: 1,
   },
   {
-    label: "오시는 길",
+    label: "프로그램",
     id: 2,
+  },
+  {
+    label: "오시는 길",
+    id: 3,
   },
 ];

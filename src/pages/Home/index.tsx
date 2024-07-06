@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Layout } from "../../components/Layout";
 import theme, { response } from "../../styles/theme";
 import { Infos } from "./data";
+import { useCallback, useState } from "react";
+import { HomeModal } from "./HomeModal";
 
 export const Home = () => {
   const IMGURL = process.env.REACT_APP_IMG_URL;
@@ -48,6 +50,19 @@ export const Home = () => {
         display: none;
       }
     }`;
+  const nowModal = JSON.parse(
+    localStorage.getItem("modal") || JSON.stringify(Date.now() - 96400000)
+  );
+  const [modal, setModal] = useState(Date.now() - nowModal > 86400000);
+
+  const handleModal = useCallback(() => {
+    setModal(!modal);
+  }, [modal]);
+
+  const handleExpire = useCallback(() => {
+    localStorage.setItem("modal", JSON.stringify(Date.now() + 86400000));
+    setModal(false);
+  }, []);
 
   return (
     <Layout>
@@ -163,6 +178,9 @@ export const Home = () => {
           ))}
         </InfoContainer>
       </Container>
+      {modal && (
+        <HomeModal handleExpire={handleExpire} handleModal={handleModal} />
+      )}
     </Layout>
   );
 };

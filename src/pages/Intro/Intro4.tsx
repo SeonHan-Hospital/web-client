@@ -1,39 +1,43 @@
 import styled from "styled-components";
 import theme from "../../styles/theme";
 
-export const Intro2 = () => {
+export const Intro4 = () => {
   const IMGURL = process.env.REACT_APP_IMG_URL;
   return (
     <Container>
-      <Title>시설 안내</Title>
-      <SubTitle>면역병동</SubTitle>
+      <Title>프로그램</Title>
+      <SubTitle>숲 체험</SubTitle>
       <ImgContainer>
-        <Img2 src={`${IMGURL}intro31.jpg`} alt="intro" />
-        <Img2 src={`${IMGURL}intro32.jpg`} alt="intro" />
+        <Img2 src={`${IMGURL}intro4_1.jpg`} alt="intro" />
+        <Img2 src={`${IMGURL}intro4_2.jpg`} alt="intro" />
       </ImgContainer>
       <ImgContainer>
-        <Img2 src={`${IMGURL}intro33.jpg`} alt="intro" />
-        <Img2 src={`${IMGURL}intro34.jpg`} alt="intro" />
+        <Img2 src={`${IMGURL}intro4_3.jpg`} alt="intro" />
+        <Img2 src={`${IMGURL}intro4_4.jpg`} alt="intro" />
       </ImgContainer>
       <ImgContainer>
-        <Img src={`${IMGURL}intro35.jpg`} alt="intro" />
-        <Img src={`${IMGURL}intro36.jpg`} alt="intro" />
-        <Img src={`${IMGURL}intro37.jpg`} alt="intro" />
+        <Img src={`${IMGURL}intro4_5.jpg`} alt="intro" />
+        <Img src={`${IMGURL}intro4_6.jpg`} alt="intro" />
+        <Img src={`${IMGURL}intro4_7.jpg`} alt="intro" />
       </ImgContainer>
-      <SubTitle>면역치료센터</SubTitle>
+      <SubTitle>요가</SubTitle>
       <ImgContainer>
-        <Img src={`${IMGURL}intro3_2.svg`} alt="intro" />
-        <Img src={`${IMGURL}intro38.jpg`} alt="intro" />
-        <Img src={`${IMGURL}intro39.jpg`} alt="intro" />
+        <Img2 src={`${IMGURL}intro4_8.jpg`} alt="intro" />
+        <Img2 src={`${IMGURL}intro4_9.jpg`} alt="intro" />
       </ImgContainer>
-      <SubTitle>재활치료센터</SubTitle>
+      <SubTitle>티, 공예, 아로마</SubTitle>
       <ImgContainer>
-        <Img2
-          src={`${IMGURL}intro40.jpg`}
-          alt="intro"
-          style={{ maxHeight: "300px" }}
-        />
-        <Img2 src={`${IMGURL}intro3_5.svg`} alt="intro" />
+        <Img2 src={`${IMGURL}intro4_10.jpg`} alt="intro" />
+        <Img2 src={`${IMGURL}intro4_11.jpg`} alt="intro" />
+      </ImgContainer>
+      <ImgContainer>
+        <Img2 src={`${IMGURL}intro4_12.jpg`} alt="intro" />
+        <Img2 src={`${IMGURL}intro4_13.jpg`} alt="intro" />
+      </ImgContainer>
+      <SubTitle>파크골프</SubTitle>
+      <ImgContainer>
+        <Img2 src={`${IMGURL}intro4_14.jpg`} alt="intro" />
+        <Img2 src={`${IMGURL}intro4_15.jpg`} alt="intro" />
       </ImgContainer>
     </Container>
   );

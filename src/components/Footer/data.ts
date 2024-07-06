@@ -40,7 +40,7 @@ export const FooterTexts: IGridBoxProps[] = [
     color: "#DBE4E8",
   },
   {
-    label: `대표자 : 윤장현\n사업자등록번호 : 747-97-00507\n전화 : 064-722-0054\n팩스 : 064-722-0064\n이메일 : sunhan0054@naver.com`,
+    label: `대표자 : 윤장현\n사업자등록번호 : 747-97-00507\n전화 : 064-722-0054\n팩스 : 064-722-0064\n이메일 : sunhan0054@naver.com\n24시 상담전화 : 010-3964-0054`,
     start: 2,
     size: 5,
     row: 4,
