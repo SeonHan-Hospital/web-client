@@ -59,3 +59,33 @@ export const useCreateQuestion = () => {
 
   return [run, response] as [typeof run, typeof response];
 };
+
+export const useGetQuestion = () => {
+  const [request, response] = useAxios();
+
+  const run = useCallback(
+    (id: number) => {
+      return request({
+        url: `/question/${id}`,
+      });
+    },
+    [request]
+  );
+
+  return [run, response] as [typeof run, typeof response];
+};
+
+export const useGetAnswers = () => {
+  const [request, response] = useAxios();
+
+  const run = useCallback(
+    (id: number) => {
+      return request({
+        url: `/answer?questionId=${id}`,
+      });
+    },
+    [request]
+  );
+
+  return [run, response] as [typeof run, typeof response];
+};

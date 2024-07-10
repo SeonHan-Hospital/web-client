@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { IQuestion } from ".";
 import { dateHandler } from "../../utils/functinos";
 import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -59,6 +60,7 @@ interface IProps {
 }
 
 export const CommuTable = ({ datas }: IProps) => {
+  const navigate = useNavigate();
   const handleAnswer = useCallback((data: IQuestion) => {
     const sub = data.subject.substring(0, 15) + "...";
     data.subject = data.subject.length < 20 ? data.subject : sub;
@@ -69,13 +71,26 @@ export const CommuTable = ({ datas }: IProps) => {
     }
   }, []);
 
+  const handleNavigate = useCallback(
+    (id: number) => {
+      navigate(`/QnA/${id}`);
+    },
+    [navigate]
+  );
+
   return (
     <Container>
       <Header />
+      {datas.length === 0 && <Emptybox>작성된 게시글이 없습니다.</Emptybox>}
       {datas?.map((el) => (
         <Cell key={el.id}>
           <div>{el.QnA_number}</div>
-          <div>{handleAnswer(el)}</div>
+          <div
+            style={{ cursor: "pointer" }}
+            onClick={() => handleNavigate(el.id)}
+          >
+            {handleAnswer(el)}
+          </div>
           <div>{el.author}</div>
           <div>{dateHandler(el.createdAt)}</div>
         </Cell>
@@ -126,4 +141,12 @@ const Cell = styled.div`
       display: none;
     }
   }
+`;
+
+const Emptybox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
 `;

@@ -22,6 +22,7 @@ export const Pagination = ({ totalElement, page, handlePage }: IProps) => {
             {idx + 1}
           </div>
         ))}
+        {pages.length === 0 && <div>1</div>}
       </IndexWrapper>
       <ImgWrapper
         onClick={() => handlePage(page < pages.length - 1 ? page + 1 : page)}
