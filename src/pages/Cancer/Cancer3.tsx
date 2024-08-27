@@ -1,10 +1,27 @@
 import styled from "styled-components";
 import theme from "../../styles/theme";
+import cancer3_2 from "./cancer3_2.png";
 
 export const Cancer3 = () => {
   const IMGURL = process.env.REACT_APP_IMG_URL;
   return (
     <Container>
+      <Title>암치료기 [RAPHAGO PREMIUM] 고주파 온열 암 치료기</Title>
+      <Subtitle>{`온열암치료는 암조직에 열을 가하여 암세포의 생체 대사율을 증가시키면서 \n산소의 공급을 막음으로써 증식을 억제하여 암세포의 자살을 유도,\n서서히 파괴하는 치료법입니다.`}</Subtitle>
+      <TextImgContainerReverse>
+        <ContentsContainer>
+          <ContentsTitle>고주파 온열 암치료기 효과</ContentsTitle>
+          <TextContents>
+            고주파 온열 암 치료기는 13.56MHz의 고주파 에너지를 이용하여, 신체
+            내부의 깊은 부위에 위치한 종양 조직을 선택적으로 가열하는
+            방식입니다. 이 치료는 정상 세포에는 거의 영향을 미치지 않으며, 암
+            세포의 온도를 42℃ 이상으로 상승시켜 종양 세포의 증식을 억제하고
+            괴사시키는 효과가 있습니다.
+          </TextContents>
+        </ContentsContainer>
+        <BigImg src={cancer3_2} alt="img" />
+      </TextImgContainerReverse>
+      <BorderLine />
       <Title>전신 온열치료</Title>
       <Subtitle>{`암환자는 정상인에 비해서 체온이 낮고 항암제와 방사선 치료의 공격적인 치료로 인해 \n혈관세포가 파괴되어 혈류량과 대사량이 감소됩니다. \n그래서 암환자의 심부온도를 39~40도까지 상승시키기 위한 전신 온열치료가 필요합니다.`}</Subtitle>
       <TextImgContainer>
