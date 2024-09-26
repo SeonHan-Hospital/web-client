@@ -30,7 +30,7 @@ export const Cancer3 = () => {
           <ContentsTitle>전신 온열치료 효과</ContentsTitle>
           <TextContents>
             암치료에 있어 온열치료의 병행은 혈액순환을 촉진시켜 세포내 영양소와
-            산소를 공급하고 함암제와 생물학적 제제의 암세포 내 유입량을 늘려
+            산소를 공급하고 항암제와 생물학적 제제의 암세포 내 유입량을 늘려
             직접적인 암세포 파괴를 유도합니다.
           </TextContents>
         </ContentsContainer>
